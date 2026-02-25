@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Cosmic Kundli - Vedic Astrologer</title>
+    <meta name="description" content="Generate pristine Vedic Astrology birth charts entirely in your browser.">
+
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="app-container glass-panel">
+        <header>
+            <img src="asset/astro_cosmic_kundli_logo.png" alt="Astro Cosmic Kundli Logo" class="app-logo">
+            <h1>Astro Cosmic <span>Kundli</span></h1>
+            <p>Vedic Astrologer - Precise calculations, entirely private.</p>
+        </header>
+
+        <div class="content">
+            <section class="input-section">
+                <h2>Birth Details</h2>
+                <form id="birth-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter full name" required autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">Birth City (Auto-find Coordinates)</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" id="city" placeholder="e.g. Yangon, Myanmar" autocomplete="off">
+                            <button type="button" id="btn-geocode" class="btn-secondary"
+                                style="width: auto; padding: 0 20px; margin-bottom: 0;">Find</button>
+                        </div>
+                        <small id="geo-status"
+                            style="color: var(--accent-glow); margin-top: 8px; display: block; font-size: 0.85rem;"></small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Date of Birth</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time of Birth</label>
+                            <input type="time" id="time" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="lat">Latitude</label>
+                            <input type="number" id="lat" step="0.0001" placeholder="e.g. 28.6139" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lng">Longitude</label>
+                            <input type="number" id="lng" step="0.0001" placeholder="e.g. 77.2090" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="padding-top: 10px; border-top: 1px solid rgba(251,191,36,0.1);">
+                        <label for="question-category">What area of life do you want to focus on?</label>
+                        <select id="question-category"
+                            style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--panel-border); background: rgba(15, 23, 42, 0.6); color: var(--text-light); font-family: 'Outfit', sans-serif; font-size: 1rem; outline: none; margin-bottom: 10px;">
+                            <option value="all">General Reading (All Areas)</option>
+                            <option value="career">Career & Jobs</option>
+                            <option value="money">Money & Wealth</option>
+                            <option value="love">Love & Relationships</option>
+                            <option value="health">Health & Wellness</option>
+                            <option value="business">Business & Entrepreneurship</option>
+                            <option value="family">Family & Home</option>
+                            <option value="travel">Travel & Adventure</option>
+                            <option value="legal">Legal Matters</option>
+                            <option value="spiritual">Spiritual Growth</option>
+                            <option value="other">Other (Specify Below)</option>
+                        </select>
+                        <input type="text" id="custom-question" placeholder="Enter your specific question..."
+                            style="display: none; margin-bottom: 15px;">
+
+                        <label style="margin-top: 10px; font-size: 0.85rem;">Optional: Select a specific period for the
+                            reading</label>
+                        <div class="form-row">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <input type="date" id="period-start" placeholder="Start Date"
+                                    style="font-size: 0.9rem;">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <input type="date" id="period-end" placeholder="End Date" style="font-size: 0.9rem;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="margin-top: 15px;">Generate Chart &
+                        Insights</button>
+                    <button type="button" class="btn-secondary" id="btn-save" disabled>Save to Profile</button>
+                </form>
+            </section>
+
+            <section class="chart-section hidden" id="chart-section">
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+                    <button id="btn-download-pdf" class="btn-primary"
+                        style="padding: 8px 16px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3); width: auto;">
+                        📄 View / Download Report
+                    </button>
+                </div>
+                <div class="chart-container">
+                    <h3 style="text-align: center; color: var(--accent-glow); margin-bottom: 20px;">Birth Chart (Rasi)
+                    </h3>
+                    <div id="chart-canvas"></div>
+                </div>
+                <div class="chart-container" style="margin-top: 30px;">
+                    <h3 style="text-align: center; color: var(--accent-glow); margin-bottom: 20px;">Navamsa Chart (D9)
+                    </h3>
+                    <div id="navamsa-canvas"></div>
+                </div>
+                <div class="chart-details" id="chart-details">
+                    <!-- Astrological details will populate here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Side panel for saved profiles -->
+    <aside class="saved-profiles glass-panel">
+        <h3>Saved Profiles</h3>
+        <ul id="profile-list">
+            <li class="empty-state">No saved profiles yet.</li>
+        </ul>
+    </aside>
+
+    <footer class="app-footer">
+        <p>&copy; 2026 by Bigdoraemon Tech</p>
+        <p
+            style="font-size: 0.75rem; margin: 8px auto 0; max-width: 600px; opacity: 0.7; padding: 0 20px; line-height: 1.4;">
+            Disclaimer: The astrological calculations and predictions provided by Astro Cosmic Kundli are for
+            entertainment and informational purposes only. They should not be used as a substitute for professional
+            medical, legal, financial, or psychological advice.
+        </p>
+        <p
+            style="font-size: 0.75rem; margin: 8px auto 0; max-width: 600px; opacity: 0.7; padding: 0 20px; line-height: 1.4;">
+            <strong>Data Security:</strong> We do not store any user data on external servers. All information remains
+            secure and is kept exclusively within your device's internal storage.
+        </p>
+    </footer>
+
+    <!-- Open Source Astronomy Engine for Planetary Calculations -->
+    <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+    <script src="js/astrology.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
