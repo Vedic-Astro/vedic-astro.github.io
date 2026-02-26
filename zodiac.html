@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Western Zodiac - AstroSuite</title>
+    <meta name="description" content="Discover your Western Astrology Sun Sign traits and horoscope.">
+
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .zodiac-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .zodiac-card {
+            flex: 0 1 140px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .zodiac-card:hover,
+        .zodiac-card.active {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: var(--accent-purple);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .zodiac-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-glow);
+        }
+
+        .zodiac-name {
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .zodiac-dates {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .horoscope-display {
+            margin-top: 40px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            border-left: 4px solid var(--accent-purple);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .horoscope-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+        }
+
+        .horoscope-header .big-icon {
+            font-size: 4rem;
+            color: var(--accent-glow);
+        }
+
+        .horoscope-header h2 {
+            font-size: 2.5rem;
+            color: var(--accent-purple);
+            margin: 0;
+        }
+
+        .horoscope-header p {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .trait-box h4 {
+            color: var(--accent-glow);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .trait-box p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0 0 10px 0;
+        }
+
+        .reading-section h4 {
+            color: var(--accent-blue);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 5px;
+        }
+
+        .reading-section p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="global-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AstroSuite<span>.</span></a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-item">Vedic Kundli</a>
+                <a href="zodiac.html" class="nav-item active">Zodiac Signs</a>
+                <a href="bazi.html" class="nav-item">Bazi (4 Pillars)</a>
+                <a href="tarot.html" class="nav-item">Tarot Reading</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="app-container glass-panel">
+        <header>
+            <img src="asset/combined_zodiac_logo.png" alt="Zodiac Logo" class="app-logo" style="max-width: 250px;">
+            <h1 style="font-size: 3rem; margin-bottom: 10px;">Western <span>Zodiac</span></h1>
+            <p>Explore the traits, strengths, and archetypes of the 12 sun signs.</p>
+        </header>
+
+        <div class="content">
+            <section class="zodiac-selection">
+                <div class="zodiac-grid" id="zodiac-grid">
+                    <!-- Zodiac cards injected by JS -->
+                </div>
+            </section>
+
+            <section class="horoscope-display hidden" id="horoscope-display">
+                <div id="zodiac-details"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/zodiac.js"></script>
+    
+    <footer class="app-footer">
+        <p>&copy; 2026 by Bigdoraemon Tech</p>
+        <p style="font-size: 0.75rem; margin: 8px auto 0; max-width: 600px; opacity: 0.7; padding: 0 20px; line-height: 1.4;">
+            Disclaimer: The astrological calculations and predictions provided are for entertainment and informational purposes only.
+        </p>
+        <p style="font-size: 0.75rem; margin: 8px auto 0; max-width: 600px; opacity: 0.7; padding: 0 20px; line-height: 1.4;">
+            <strong>Data Security:</strong> We do not store any user data on external servers. All information remains secure and is kept exclusively within your device's internal storage.
+        </p>
+    </footer>
+</body>
+
+</html>

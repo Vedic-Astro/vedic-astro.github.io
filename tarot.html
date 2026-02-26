@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Reading - AstroSuite</title>
+    <meta name="description" content="Draw interactive Tarot cards for guidance and insight.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .tarot-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .spread-selector {
+            background: rgba(0, 0, 0, 0.4);
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .tarot-board {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            min-height: 400px;
+            perspective: 1000px;
+            /* 3D effect for flipping */
+        }
+
+        .tarot-card-container {
+            width: 220px;
+            height: 380px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .card-label {
+            position: absolute;
+            top: -30px;
+            width: 100%;
+            text-align: center;
+            color: var(--accent-glow);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .tarot-card {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+
+        .tarot-card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(251, 191, 36, 0.8);
+            overflow: hidden;
+            background-color: var(--bg-dark);
+            box-sizing: border-box;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            position: absolute;
+            /* Changed from relative to absolute */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(251, 191, 36, 0.8);
+            overflow: hidden;
+            box-sizing: border-box;
+            -webkit-backface-visibility: hidden;
+        }
+
+        /* Beautiful mystical card back pattern */
+        .card-back::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            height: 140px;
+            border: 2px solid rgba(251, 191, 36, 0.6);
+            border-radius: 50%;
+            background-image: url('asset/esoteric_circle_logo.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: var(--bg-dark);
+            box-shadow: 0 0 25px rgba(251, 191, 36, 0.2);
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        /* Outer border for the card back to retain the card feel */
+        .card-back::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        .card-front {
+            background: var(--bg-dark);
+            /* Match back cover background color before image loads */
+            color: #111827;
+            transform: rotateY(180deg);
+            position: absolute;
+            /* Changed to absolute to stop shifting */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            padding: 0;
+            margin: 0;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(251, 191, 36, 0.8);
+            overflow: hidden;
+            box-sizing: border-box;
+            -webkit-backface-visibility: hidden;
+        }
+
+        /* Standard view for cards without full images */
+        .card-image-placeholder {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .card-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .card-front-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #312e81;
+        }
+
+        .card-number {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: bold;
+        }
+
+        .reading-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .reading-modal.show {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .reading-content {
+            background: var(--bg-dark);
+            border: 1px solid var(--accent-purple);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--text-light);
+        }
+
+        .reading-title {
+            color: var(--accent-glow);
+            font-size: 2rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .reading-text {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .reading-text strong {
+            color: var(--accent-blue);
+        }
+
+        .deck-info {
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="global-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AstroSuite<span>.</span></a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-item">Vedic Kundli</a>
+                <a href="zodiac.html" class="nav-item">Zodiac Signs</a>
+                <a href="bazi.html" class="nav-item">Bazi (4 Pillars)</a>
+                <a href="tarot.html" class="nav-item active">Tarot Reading</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="app-container glass-panel">
+        <header>
+            <img src="asset/circular_tarot_logo.png" alt="Tarot Logo" class="app-logo" style="max-width: 250px;">
+            <h1 style="font-size: 3rem; margin-bottom: 10px;">Mystic <span>Tarot</span></h1>
+            <p>Focus your intent and draw the cards for cosmic guidance.</p>
+        </header>
+
+        <div class="content">
+            <div class="tarot-controls">
+                <div style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <label style="display: block; color: var(--text-light); margin-bottom: 10px; font-weight: 600;">What
+                        question do you seek guidance on?</label>
+                    <textarea id="tarot-question" placeholder="Enter your question or intention for the reading..."
+                        style="width: 100%; padding: 15px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: var(--text-light); font-family: 'Outfit', sans-serif; font-size: 1rem; min-height: 80px; resize: vertical;"></textarea>
+                </div>
+                <select id="spread-selector" class="spread-selector">
+                    <option value="6">In-Depth Reading (6 Cards)</option>
+                    <option value="3">Past, Present, Future (3 Cards)</option>
+                    <option value="1">Daily Guidance (1 Card)</option>
+                    <option value="yesno">Yes/No (1 Card)</option>
+                </select>
+                <select id="deck-selector" class="spread-selector" style="margin-top: 10px;">
+                    <option value="major">Major Arcana Only (22 cards)</option>
+                    <option value="full">Full Deck - Major + Minor (78 cards)</option>
+                </select>
+                <button id="btn-shuffle" class="btn-secondary">Shuffle & Deal</button>
+            </div>
+
+            <div class="tarot-board" id="tarot-board">
+                <!-- Cards will be injected by JS -->
+            </div>
+
+            <p class="deck-info">Choose between 22 Major Arcana for profound life readings or the full 78-card deck for
+                detailed guidance.</p>
+        </div>
+    </main>
+
+    <!-- Modal for Detailed Reading -->
+    <div class="reading-modal" id="reading-modal">
+        <div class="reading-content">
+            <button class="close-modal" id="btn-close-modal">&times;</button>
+            <h2 class="reading-title" id="modal-title">The Fool</h2>
+            <div class="reading-text" id="modal-text"></div>
+        </div>
+    </div>
+
+    <script src="js/tarot-full.js"></script>
+    <script src="js/tarot.js"></script>
+
+    <footer class="app-footer">
+        <p>&copy; 2026 by Bigdoraemon Tech</p>
+        <p
+            style="font-size: 0.75rem; margin: 8px auto 0; max-width: 600px; opacity: 0.7; padding: 0 20px; line-height: 1.4;">
+            Disclaimer: The astrological calculations and predictions provided are for entertainment and informational
+            purposes only.
+        </p>
+        <p
+            style="font-size: 0.75rem; margin: 8px auto 0; max-width: 600px; opacity: 0.7; padding: 0 20px; line-height: 1.4;">
+            <strong>Data Security:</strong> We do not store any user data on external servers. All information remains
+            secure and is kept exclusively within your device's internal storage.
+        </p>
+    </footer>
+</body>
+
+</html>
