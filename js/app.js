@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${planetDetails}
                     </ul>
 
-                    <h4 style="color: var(--accent-glow); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem;">${window.i18n.t("daily_panchang_details", "Daily Panchang Details")}</h4>
+                    <h4 style="color: var(--accent-glow); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem;">Daily Panchang Details</h4>
                     <ul style="list-style: none; padding: 0; width: 100%; max-width: 400px; margin: 0 auto 30px; text-align: left; background: rgba(0,0,0,0.2); border-radius: 8px; padding: 20px; font-size: 1.15rem;">
                         <style>
                             #chart-details ul li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(251,191,36,0.1); }
