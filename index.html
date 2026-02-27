@@ -10,11 +10,11 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E72HCQBSXB"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-E72HCQBSXB');
+        gtag('config', 'G-E72HCQBSXB');
     </script>
 
     <!-- Google Fonts for Modern Typography -->
@@ -73,8 +73,9 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="date">Date of Birth</label>
-                            <input type="date" id="date" required>
+                            <label for="date">Date of Birth (DD-MM-YYYY)</label>
+                            <input type="text" id="date" placeholder="e.g. 25-12-1990" pattern="\d{2}-\d{2}-\d{4}"
+                                required>
                         </div>
                         <div class="form-group">
                             <label for="time">Time of Birth</label>
@@ -94,40 +95,41 @@
                     </div>
                     <div class="form-group">
                         <label for="timezone">Timezone Offset (UTC)</label>
-                        <select id="timezone" required style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--panel-border); background: rgba(15, 23, 42, 0.6); color: var(--text-light); font-family: 'Outfit', sans-serif; font-size: 1rem; outline: none;">
-                            <option value="-12">UTC-12:00</option>
-                            <option value="-11">UTC-11:00</option>
-                            <option value="-10">UTC-10:00</option>
-                            <option value="-9">UTC-09:00</option>
-                            <option value="-8">UTC-08:00</option>
-                            <option value="-7">UTC-07:00</option>
-                            <option value="-6">UTC-06:00</option>
-                            <option value="-5">UTC-05:00 (EST)</option>
-                            <option value="-4">UTC-04:00</option>
-                            <option value="-3.5">UTC-03:30</option>
-                            <option value="-3">UTC-03:00</option>
-                            <option value="-2">UTC-02:00</option>
-                            <option value="-1">UTC-01:00</option>
-                            <option value="0">UTC+00:00</option>
-                            <option value="1">UTC+01:00</option>
-                            <option value="2">UTC+02:00</option>
-                            <option value="3">UTC+03:00</option>
-                            <option value="3.5">UTC+03:30</option>
-                            <option value="4">UTC+04:00</option>
-                            <option value="4.5">UTC+04:30</option>
-                            <option value="5">UTC+05:00</option>
-                            <option value="5.5">UTC+05:30 (IST)</option>
-                            <option value="5.75">UTC+05:45 (Nepal)</option>
-                            <option value="6">UTC+06:00</option>
+                        <select id="timezone" required
+                            style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--panel-border); background: rgba(15, 23, 42, 0.6); color: var(--text-light); font-family: 'Outfit', sans-serif; font-size: 1rem; outline: none;">
+                            <option value="-12">UTC-12:00 (Baker Island)</option>
+                            <option value="-11">UTC-11:00 (Samoa)</option>
+                            <option value="-10">UTC-10:00 (Hawaii)</option>
+                            <option value="-9">UTC-09:00 (Alaska)</option>
+                            <option value="-8">UTC-08:00 (Pacific Time/PT)</option>
+                            <option value="-7">UTC-07:00 (Mountain Time/MT)</option>
+                            <option value="-6">UTC-06:00 (Central Time/CT)</option>
+                            <option value="-5">UTC-05:00 (Eastern Time/ET)</option>
+                            <option value="-4">UTC-04:00 (Atlantic Time/AST)</option>
+                            <option value="-3.5">UTC-03:30 (Newfoundland)</option>
+                            <option value="-3">UTC-03:00 (Buenos Aires/BRT)</option>
+                            <option value="-2">UTC-02:00 (Mid-Atlantic)</option>
+                            <option value="-1">UTC-01:00 (Azores)</option>
+                            <option value="0">UTC+00:00 (London/GMT/UTC)</option>
+                            <option value="1">UTC+01:00 (Paris/CET)</option>
+                            <option value="2">UTC+02:00 (Cairo/EET)</option>
+                            <option value="3">UTC+03:00 (Moscow/AST)</option>
+                            <option value="3.5">UTC+03:30 (Tehran)</option>
+                            <option value="4">UTC+04:00 (Dubai/GST)</option>
+                            <option value="4.5">UTC+04:30 (Kabul)</option>
+                            <option value="5">UTC+05:00 (Karachi/PKT)</option>
+                            <option value="5.5">UTC+05:30 (India/IST)</option>
+                            <option value="5.75">UTC+05:45 (Nepal/NPT)</option>
+                            <option value="6">UTC+06:00 (Dhaka/BST)</option>
                             <option value="6.5" selected>UTC+06:30 (Yangon/RGN)</option>
-                            <option value="7">UTC+07:00</option>
-                            <option value="8">UTC+08:00</option>
-                            <option value="9">UTC+09:00</option>
-                            <option value="9.5">UTC+09:30</option>
-                            <option value="10">UTC+10:00</option>
-                            <option value="11">UTC+11:00</option>
-                            <option value="12">UTC+12:00</option>
-                            <option value="13">UTC+13:00</option>
+                            <option value="7">UTC+07:00 (Bangkok/ICT)</option>
+                            <option value="8">UTC+08:00 (Singapore/SGT)</option>
+                            <option value="9">UTC+09:00 (Tokyo/JST)</option>
+                            <option value="9.5">UTC+09:30 (Adelaide/ACST)</option>
+                            <option value="10">UTC+10:00 (Sydney/AEST)</option>
+                            <option value="11">UTC+11:00 (Solomon Islands/SBT)</option>
+                            <option value="12">UTC+12:00 (Auckland/NZST)</option>
+                            <option value="13">UTC+13:00 (Tonga/TOT)</option>
                         </select>
                     </div>
 
@@ -154,11 +156,12 @@
                             reading</label>
                         <div class="form-row">
                             <div class="form-group" style="margin-bottom: 0;">
-                                <input type="date" id="period-start" placeholder="Start Date"
-                                    style="font-size: 0.9rem;">
+                                <input type="text" id="period-start" placeholder="Start (DD-MM-YYYY)"
+                                    pattern="\d{2}-\d{2}-\d{4}" style="font-size: 0.9rem;">
                             </div>
                             <div class="form-group" style="margin-bottom: 0;">
-                                <input type="date" id="period-end" placeholder="End Date" style="font-size: 0.9rem;">
+                                <input type="text" id="period-end" placeholder="End (DD-MM-YYYY)"
+                                    pattern="\d{2}-\d{2}-\d{4}" style="font-size: 0.9rem;">
                             </div>
                         </div>
                     </div>

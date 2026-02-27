@@ -79,7 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const name = document.getElementById('name').value;
-            const date = document.getElementById('date').value;
+            let date = document.getElementById('date').value;
+            if (date.match(/^\d{2}-\d{2}-\d{4}$/)) {
+                const parts = date.split('-');
+                date = `${parts[2]}-${parts[1]}-${parts[0]}`;
+            }
             const time = document.getElementById('time').value;
             const lat = parseFloat(document.getElementById('lat').value);
             const lng = parseFloat(document.getElementById('lng').value);
@@ -88,8 +92,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const category = questionCategory.value;
             const question = customQuestion.value;
-            const periodStart = document.getElementById('period-start').value;
-            const periodEnd = document.getElementById('period-end').value;
+            
+            let periodStart = document.getElementById('period-start').value;
+            if (periodStart && periodStart.match(/^\d{2}-\d{2}-\d{4}$/)) {
+                const parts = periodStart.split('-');
+                periodStart = `${parts[2]}-${parts[1]}-${parts[0]}`;
+            }
+            let periodEnd = document.getElementById('period-end').value;
+            if (periodEnd && periodEnd.match(/^\d{2}-\d{2}-\d{4}$/)) {
+                const parts = periodEnd.split('-');
+                periodEnd = `${parts[2]}-${parts[1]}-${parts[0]}`;
+            }
 
             // Perform Astrological Calculations
             currentChartData = window.AstrologyEngine.calculateChart(date, time, lat, lng, timezone, name);
@@ -531,7 +544,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 infoDiv.addEventListener('click', () => {
                     document.getElementById('name').value = p.name;
-                    document.getElementById('date').value = p.date;
+                    if (p.date && p.date.includes('-')) {
+                        const parts = p.date.split('-');
+                        if (parts[0].length === 4) { // Found YYYY-MM-DD, convert to DD-MM-YYYY
+                            document.getElementById('date').value = `${parts[2]}-${parts[1]}-${parts[0]}`;
+                        } else {
+                            document.getElementById('date').value = p.date;
+                        }
+                    } else {
+                        document.getElementById('date').value = p.date;
+                    }
                     document.getElementById('time').value = p.time;
                     document.getElementById('lat').value = p.lat;
                     document.getElementById('lng').value = p.lng;
