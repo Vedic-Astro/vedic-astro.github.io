@@ -54,6 +54,27 @@ const translations = {
         "saved_profiles_title": "Saved Profiles",
         "empty_profiles": "No saved profiles yet.",
 
+        // Panchang
+        "tithi_lunar_day": "Tithi (Lunar Day)",
+        "nakshatra_star": "Nakshatra (Star)",
+        "yoga": "Yoga",
+        "vaar_day": "Vaar (Day)",
+        "daily_panchang_details": "Daily Panchang Details",
+        "astrological_insights": "Astrological Insights",
+        "manual_reading": "Manual Reading",
+
+        // Specific Panchang values (from user chart)
+        "panchang_tritiya___shukla__waxing__paksha": "Tritiya - Shukla (Waxing) Paksha",
+        "panchang_ashlesha": "Ashlesha",
+        "panchang_vajra": "Vajra",
+        "panchang_sunday": "Sunday",
+        "panchang_monday": "Monday",
+        "panchang_tuesday": "Tuesday",
+        "panchang_wednesday": "Wednesday",
+        "panchang_thursday": "Thursday",
+        "panchang_friday": "Friday",
+        "panchang_saturday": "Saturday",
+
         // Footer - English only per request 
         "footer_copyright": "© 2026 by Bigdoraemon Tech",
         "footer_disclaimer": "Disclaimer: The astrological calculations and predictions provided by Astro Cosmic Kundli are for entertainment and informational purposes only. They should not be used as a substitute for professional medical, legal, financial, or psychological advice.",
@@ -180,6 +201,27 @@ const translations = {
         // Side Panel
         "saved_profiles_title": "သိမ်းဆည်းထားသော အချက်အလက်များ",
         "empty_profiles": "သိမ်းဆည်းထားသော အချက်အလက် မရှိသေးပါ။",
+
+        // Panchang
+        "tithi_lunar_day": "တိထီ (လအဆစ်)",
+        "nakshatra_star": "နက္ခတ် (ကြယ်)",
+        "yoga": "ယောဂ",
+        "vaar_day": "နေ့နံ",
+        "daily_panchang_details": "နေ့စဉ် ပဉ္စင် (Panchang) အချက်အလက်များ",
+        "astrological_insights": "ဗေဒင်ဟောစာတမ်း အသေးစိတ်",
+        "manual_reading": "လက်ရေးဟောစာတမ်း",
+
+        // Specific Panchang values (from user chart)
+        "panchang_tritiya___shukla__waxing__paksha": "တတိယ - လဆန်းပက္ခ",
+        "panchang_ashlesha": "အသလိဿ (Ashlesha)",
+        "panchang_vajra": "ဝဇိရ (Vajra)",
+        "panchang_sunday": "တနင်္ဂနွေ",
+        "panchang_monday": "တနင်္လာ",
+        "panchang_tuesday": "အင်္ဂါ",
+        "panchang_wednesday": "ဗုဒ္ဓဟူး",
+        "panchang_thursday": "ကြာသပတေး",
+        "panchang_friday": "သောကြာ",
+        "panchang_saturday": "စနေ",
 
         // Footer - English only per request
         "footer_copyright": "© 2026 by Bigdoraemon Tech",

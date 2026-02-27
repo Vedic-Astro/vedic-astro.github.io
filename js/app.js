@@ -293,10 +293,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             #chart-details ul li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(251,191,36,0.1); }
                             #chart-details ul li:last-child { border-bottom: none; }
                         </style>
-                        <li><span>${window.i18n.t("tithi_lunar_day", "Tithi (Lunar Day)")}</span> <span style="color:var(--accent-glow)">${data.panchang.tithi}</span></li>
-                        <li><span>${window.i18n.t("nakshatra_star", "Nakshatra (Star)")}</span> <span style="color:var(--accent-glow)">${data.panchang.nakshatra}</span></li>
-                        <li><span>${window.i18n.t("yoga", "Yoga")}</span> <span style="color:var(--accent-glow)">${data.panchang.yoga}</span></li>
-                        <li><span>${window.i18n.t("vaar_day", "Vaar (Day)")}</span> <span style="color:var(--accent-glow)">${data.panchang.vaar}</span></li>
+                        <li><span>${window.i18n.t("tithi_lunar_day", "Tithi (Lunar Day)")}</span> <span style="color:var(--accent-glow)">${window.i18n.t("panchang_" + data.panchang.tithi.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase(), data.panchang.tithi)}</span></li>
+                        <li><span>${window.i18n.t("nakshatra_star", "Nakshatra (Star)")}</span> <span style="color:var(--accent-glow)">${window.i18n.t("panchang_" + data.panchang.nakshatra.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase(), data.panchang.nakshatra)}</span></li>
+                        <li><span>${window.i18n.t("yoga", "Yoga")}</span> <span style="color:var(--accent-glow)">${window.i18n.t("panchang_" + data.panchang.yoga.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase(), data.panchang.yoga)}</span></li>
+                        <li><span>${window.i18n.t("vaar_day", "Vaar (Day)")}</span> <span style="color:var(--accent-glow)">${window.i18n.t("panchang_" + data.panchang.vaar.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase(), data.panchang.vaar)}</span></li>
                     </ul>
 
                     <h4 style="color: var(--accent-glow); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem;">
