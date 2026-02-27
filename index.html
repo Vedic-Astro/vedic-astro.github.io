@@ -33,10 +33,16 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo">AstroSuite<span>.</span></a>
             <div class="nav-links">
-                <a href="index.html" class="nav-item active">Vedic Kundli</a>
-                <a href="zodiac.html" class="nav-item">Zodiac Signs</a>
-                <a href="bazi.html" class="nav-item">Bazi (4 Pillars)</a>
-                <a href="tarot.html" class="nav-item">Tarot Reading</a>
+                <a href="index.html" class="nav-item active" data-i18n="nav_kundli">Vedic Kundli</a>
+                <a href="zodiac.html" class="nav-item" data-i18n="nav_zodiac">Zodiac Signs</a>
+                <a href="bazi.html" class="nav-item" data-i18n="nav_bazi">Bazi (4 Pillars)</a>
+                <a href="tarot.html" class="nav-item" data-i18n="nav_tarot">Tarot Reading</a>
+            </div>
+            <div class="lang-toggle" style="margin-left: 15px; display: flex; gap: 5px;">
+                <button class="lang-btn active" data-lang="en" onclick="window.i18n.setLanguage('en')"
+                    style="padding: 4px 8px; border: 1px solid var(--accent-glow); border-radius: 4px; background: rgba(139, 92, 246, 0.2); color: var(--text-light); cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 0.85rem; transition: all 0.2s;">EN</button>
+                <button class="lang-btn" data-lang="my" onclick="window.i18n.setLanguage('my')"
+                    style="padding: 4px 8px; border: 1px solid var(--accent-glow); border-radius: 4px; background: transparent; color: var(--text-light); cursor: pointer; font-family: 'Padauk', 'Pyidaungsu', 'Outfit', sans-serif; font-size: 0.85rem; transition: all 0.2s;">MY</button>
             </div>
         </div>
     </nav>
@@ -50,24 +56,26 @@
     <main class="app-container glass-panel">
         <header>
             <img src="asset/astro_cosmic_kundli_logo.png" alt="Astro Cosmic Kundli Logo" class="app-logo">
-            <h1>Astro Cosmic <span>Kundli</span></h1>
-            <p>Vedic Astrologer - Precise calculations, entirely private.</p>
+            <h1 data-i18n="app_title">Astro Cosmic <span>Kundli</span></h1>
+            <p data-i18n="app_subtitle">Vedic Astrologer - Precise calculations, entirely private.</p>
         </header>
 
         <div class="content">
             <section class="input-section">
-                <h2>Birth Details</h2>
+                <h2 data-i18n="birth_details_title">Birth Details</h2>
                 <form id="birth-form">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Enter full name" required autocomplete="off">
+                        <label for="name" data-i18n="label_name">Name</label>
+                        <input type="text" id="name" data-i18n="placeholder_name" placeholder="Enter full name" required
+                            autocomplete="off">
                     </div>
 
                     <div class="form-group">
-                        <label for="city">Birth City (Auto-find Coordinates)</label>
+                        <label for="city" data-i18n="label_city">Birth City (Auto-find Coordinates)</label>
                         <div style="display: flex; gap: 10px;">
-                            <input type="text" id="city" placeholder="e.g. Yangon, Myanmar" autocomplete="off">
-                            <button type="button" id="btn-geocode" class="btn-secondary"
+                            <input type="text" id="city" data-i18n="placeholder_city" placeholder="e.g. Yangon, Myanmar"
+                                autocomplete="off">
+                            <button type="button" id="btn-geocode" class="btn-secondary" data-i18n="btn_geocode"
                                 style="width: auto; padding: 0 20px; margin-bottom: 0;">Find</button>
                         </div>
                         <small id="geo-status"
@@ -76,28 +84,28 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="date">Date of Birth (DD-MM-YYYY)</label>
-                            <input type="text" id="date" class="date-picker-input" placeholder="Select Date" required
-                                autocomplete="off">
+                            <label for="date" data-i18n="label_date">Date of Birth (DD-MM-YYYY)</label>
+                            <input type="text" id="date" class="date-picker-input" data-i18n="placeholder_date"
+                                placeholder="Select Date" required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <label for="time">Time of Birth</label>
+                            <label for="time" data-i18n="label_time">Time of Birth</label>
                             <input type="time" id="time" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="lat">Latitude</label>
+                            <label for="lat" data-i18n="label_lat">Latitude</label>
                             <input type="number" id="lat" step="0.0001" placeholder="e.g. 28.6139" required>
                         </div>
                         <div class="form-group">
-                            <label for="lng">Longitude</label>
+                            <label for="lng" data-i18n="label_lng">Longitude</label>
                             <input type="number" id="lng" step="0.0001" placeholder="e.g. 77.2090" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="timezone">Timezone Offset (UTC)</label>
+                        <label for="timezone" data-i18n="label_timezone">Timezone Offset (UTC)</label>
                         <select id="timezone" required
                             style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--panel-border); background: rgba(15, 23, 42, 0.6); color: var(--text-light); font-family: 'Outfit', sans-serif; font-size: 1rem; outline: none;">
                             <option value="-12">UTC-12:00 (Baker Island)</option>
@@ -137,58 +145,65 @@
                     </div>
 
                     <div class="form-group" style="padding-top: 10px; border-top: 1px solid rgba(251,191,36,0.1);">
-                        <label for="question-category">What area of life do you want to focus on?</label>
+                        <label for="question-category" data-i18n="label_category">What area of life do you want to focus
+                            on?</label>
                         <select id="question-category"
                             style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--panel-border); background: rgba(15, 23, 42, 0.6); color: var(--text-light); font-family: 'Outfit', sans-serif; font-size: 1rem; outline: none; margin-bottom: 10px;">
-                            <option value="all">General Reading (All Areas)</option>
-                            <option value="career">Career & Jobs</option>
-                            <option value="money">Money & Wealth</option>
-                            <option value="love">Love & Relationships</option>
-                            <option value="health">Health & Wellness</option>
-                            <option value="business">Business & Entrepreneurship</option>
-                            <option value="family">Family & Home</option>
-                            <option value="travel">Travel & Adventure</option>
-                            <option value="legal">Legal Matters</option>
-                            <option value="spiritual">Spiritual Growth</option>
-                            <option value="other">Other (Specify Below)</option>
+                            <option value="all" data-i18n="cat_all">General Reading (All Areas)</option>
+                            <option value="career" data-i18n="cat_career">Career & Jobs</option>
+                            <option value="money" data-i18n="cat_money">Money & Wealth</option>
+                            <option value="love" data-i18n="cat_love">Love & Relationships</option>
+                            <option value="health" data-i18n="cat_health">Health & Wellness</option>
+                            <option value="business" data-i18n="cat_business">Business & Entrepreneurship</option>
+                            <option value="family" data-i18n="cat_family">Family & Home</option>
+                            <option value="travel" data-i18n="cat_travel">Travel & Adventure</option>
+                            <option value="legal" data-i18n="cat_legal">Legal Matters</option>
+                            <option value="spiritual" data-i18n="cat_spiritual">Spiritual Growth</option>
+                            <option value="other" data-i18n="cat_other">Other (Specify Below)</option>
                         </select>
-                        <input type="text" id="custom-question" placeholder="Enter your specific question..."
-                            style="display: none; margin-bottom: 15px;">
+                        <input type="text" id="custom-question" data-i18n="placeholder_custom"
+                            placeholder="Enter your specific question..." style="display: none; margin-bottom: 15px;">
 
-                        <label style="margin-top: 10px; font-size: 0.85rem;">Optional: Select a specific period for the
+                        <label style="margin-top: 10px; font-size: 0.85rem;" data-i18n="label_optional_period">Optional:
+                            Select a specific period for the
                             reading (DD-MM-YYYY)</label>
                         <div class="form-row">
                             <div class="form-group" style="margin-bottom: 0;">
-                                <input type="text" id="period-start" class="date-picker-input" placeholder="Start Date"
-                                    style="font-size: 0.9rem;" autocomplete="off">
+                                <input type="text" id="period-start" class="date-picker-input"
+                                    data-i18n="placeholder_start" placeholder="Start Date" style="font-size: 0.9rem;"
+                                    autocomplete="off">
                             </div>
                             <div class="form-group" style="margin-bottom: 0;">
-                                <input type="text" id="period-end" class="date-picker-input" placeholder="End Date"
-                                    style="font-size: 0.9rem;" autocomplete="off">
+                                <input type="text" id="period-end" class="date-picker-input" data-i18n="placeholder_end"
+                                    placeholder="End Date" style="font-size: 0.9rem;" autocomplete="off">
                             </div>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn-primary" style="margin-top: 15px;">Generate Chart &
+                    <button type="submit" class="btn-primary" style="margin-top: 15px;"
+                        data-i18n="btn_generate">Generate Chart &
                         Insights</button>
-                    <button type="button" class="btn-secondary" id="btn-save" disabled>Save to Profile</button>
+                    <button type="button" class="btn-secondary" id="btn-save" disabled data-i18n="btn_save">Save to
+                        Profile</button>
                 </form>
             </section>
 
             <section class="chart-section hidden" id="chart-section">
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
-                    <button id="btn-download-pdf" class="btn-primary"
+                    <button id="btn-download-pdf" class="btn-primary" data-i18n="btn_download"
                         style="padding: 8px 16px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3); width: auto;">
                         📄 View / Download Report
                     </button>
                 </div>
                 <div class="chart-container">
-                    <h3 style="text-align: center; color: var(--accent-glow); margin-bottom: 20px;">Birth Chart (Rasi)
+                    <h3 style="text-align: center; color: var(--accent-glow); margin-bottom: 20px;"
+                        data-i18n="title_rasi">Birth Chart (Rasi)
                     </h3>
                     <div id="chart-canvas"></div>
                 </div>
                 <div class="chart-container" style="margin-top: 30px;">
-                    <h3 style="text-align: center; color: var(--accent-glow); margin-bottom: 20px;">Navamsa Chart (D9)
+                    <h3 style="text-align: center; color: var(--accent-glow); margin-bottom: 20px;"
+                        data-i18n="title_navamsa">Navamsa Chart (D9)
                     </h3>
                     <div id="navamsa-canvas"></div>
                 </div>
@@ -201,21 +216,21 @@
 
     <!-- Side panel for saved profiles -->
     <aside class="saved-profiles glass-panel">
-        <h3>Saved Profiles</h3>
+        <h3 data-i18n="saved_profiles_title">Saved Profiles</h3>
         <ul id="profile-list">
-            <li class="empty-state">No saved profiles yet.</li>
+            <li class="empty-state" data-i18n="empty_profiles">No saved profiles yet.</li>
         </ul>
     </aside>
 
     <footer class="app-footer">
-        <p>&copy; 2026 by Bigdoraemon Tech</p>
-        <p
+        <p data-i18n="footer_copyright">&copy; 2026 by Bigdoraemon Tech</p>
+        <p data-i18n="footer_disclaimer"
             style="font-size: 0.75rem; margin: 8px auto 0; max-width: 600px; opacity: 0.7; padding: 0 20px; line-height: 1.4;">
             Disclaimer: The astrological calculations and predictions provided by Astro Cosmic Kundli are for
             entertainment and informational purposes only. They should not be used as a substitute for professional
             medical, legal, financial, or psychological advice.
         </p>
-        <p
+        <p data-i18n="footer_security"
             style="font-size: 0.75rem; margin: 8px auto 0; max-width: 600px; opacity: 0.7; padding: 0 20px; line-height: 1.4;">
             <strong>Data Security:</strong> We do not store any user data on external servers. All information remains
             secure and is kept exclusively within your device's internal storage.
@@ -225,6 +240,7 @@
     <!-- Open Source Astronomy Engine for Planetary Calculations -->
     <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/astrology.js?v=2602"></script>
     <script src="js/chart.js?v=2602"></script>
     <script src="js/app.js?v=2602"></script>
