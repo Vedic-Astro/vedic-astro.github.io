@@ -93,9 +93,42 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="timezone">Timezone Offset</label>
-                        <input type="number" id="timezone" step="0.5" placeholder="e.g. 5.5 for IST (-5 for EST)"
-                            required>
+                        <label for="timezone">Timezone Offset (UTC)</label>
+                        <select id="timezone" required style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--panel-border); background: rgba(15, 23, 42, 0.6); color: var(--text-light); font-family: 'Outfit', sans-serif; font-size: 1rem; outline: none;">
+                            <option value="-12">UTC-12:00</option>
+                            <option value="-11">UTC-11:00</option>
+                            <option value="-10">UTC-10:00</option>
+                            <option value="-9">UTC-09:00</option>
+                            <option value="-8">UTC-08:00</option>
+                            <option value="-7">UTC-07:00</option>
+                            <option value="-6">UTC-06:00</option>
+                            <option value="-5">UTC-05:00 (EST)</option>
+                            <option value="-4">UTC-04:00</option>
+                            <option value="-3.5">UTC-03:30</option>
+                            <option value="-3">UTC-03:00</option>
+                            <option value="-2">UTC-02:00</option>
+                            <option value="-1">UTC-01:00</option>
+                            <option value="0">UTC+00:00</option>
+                            <option value="1">UTC+01:00</option>
+                            <option value="2">UTC+02:00</option>
+                            <option value="3">UTC+03:00</option>
+                            <option value="3.5">UTC+03:30</option>
+                            <option value="4">UTC+04:00</option>
+                            <option value="4.5">UTC+04:30</option>
+                            <option value="5">UTC+05:00</option>
+                            <option value="5.5">UTC+05:30 (IST)</option>
+                            <option value="5.75">UTC+05:45 (Nepal)</option>
+                            <option value="6">UTC+06:00</option>
+                            <option value="6.5" selected>UTC+06:30 (Yangon/RGN)</option>
+                            <option value="7">UTC+07:00</option>
+                            <option value="8">UTC+08:00</option>
+                            <option value="9">UTC+09:00</option>
+                            <option value="9.5">UTC+09:30</option>
+                            <option value="10">UTC+10:00</option>
+                            <option value="11">UTC+11:00</option>
+                            <option value="12">UTC+12:00</option>
+                            <option value="13">UTC+13:00</option>
+                        </select>
                     </div>
 
                     <div class="form-group" style="padding-top: 10px; border-top: 1px solid rgba(251,191,36,0.1);">
