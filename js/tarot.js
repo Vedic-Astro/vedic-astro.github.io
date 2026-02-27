@@ -146,12 +146,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function openReading(card, isReversed, position) {
-        modalTitle.innerText = `${card.name} ${isReversed ? '(Reversed)' : ''}`;
+        const sanitizeKey = (str) => {
+            return str.toLowerCase().replace(/[^a-z0-9]/g, '');
+        };
+        const cardKeyBase = sanitizeKey(card.name);
+
+        modalTitle.innerText = card.name + (isReversed ? " (Reversed)" : "");
+
+        const translatedPosMeaning = window.i18n.t("tarot_pos_mean_" + position.replace(/[^a-zA-Z]/g, '').toLowerCase(), getPositionMeaning(position));
 
         let interpretation = `
             <div style="background: rgba(139, 92, 246, 0.1); border-left: 3px solid var(--accent-purple); padding: 15px; margin-bottom: 20px; border-radius: 4px;">
                 <p style="margin: 0; color: var(--accent-glow);"><strong>Position Focus: ${position}</strong></p>
-                <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: var(--text-light);">${getPositionMeaning(position)}</p>
+                <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: var(--text-light);">${translatedPosMeaning}</p>
             </div>
             <div style="text-align: center; margin: 20px 0;">
                 ${card.image ? `<img src="${card.image}" alt="${card.name}" style="max-height: 400px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); ${isReversed ? 'transform: rotate(180deg);' : ''}">` : `<p style="font-size: 4rem; margin: 0;">${card.icon}</p>`}
@@ -176,25 +183,25 @@ document.addEventListener('DOMContentLoaded', () => {
             interpretation += `
                 <div style="background: rgba(0,0,0,0.3); border: 2px solid ${color}; padding: 20px; margin-bottom: 20px; border-radius: 12px; text-align: center;">
                     <h3 style="margin: 0; font-size: 2.5rem; color: ${color}; text-transform: uppercase; letter-spacing: 2px;">${answer}</h3>
-                    <p style="margin: 10px 0 0 0; font-size: 0.9rem; color: var(--text-muted);">Based on card orientation and inherent archetype energy.</p>
+                    <p style="margin: 10px 0 0 0; font-size: 0.9rem; color: var(--text-muted);">${window.i18n.t("tarot_yn_desc", "Based on card orientation and inherent archetype energy.")}</p>
                 </div>
             `;
         }
 
         if (isReversed) {
             interpretation += `
-                <p><strong>Core Energy:</strong> When drawn in reverse, the energy of this card turns inward. It suggests internal blockages, delays, or subjective internal experiences.</p>
-                <p style="margin-top: 15px;"><strong>Card Meaning & Themes:</strong> ${card.reverse}</p>
+                <p><strong>${window.i18n.t("tarot_core_energy", "Core Energy:")}</strong> ${window.i18n.t("tarot_reversed_energy", "When drawn in reverse, the energy of this card turns inward. It suggests internal blockages, delays, or subjective internal experiences.")}</p>
+                <p style="margin-top: 15px;"><strong>${window.i18n.t("tarot_card_meaning", "Card Meaning & Themes:")}</strong> ${window.i18n.t("tarot_meaning_" + cardKeyBase + "_rev", card.reverse)}</p>
                 <p style="margin-top: 15px; padding: 10px; border: 1px dashed rgba(239, 68, 68, 0.4); border-radius: 8px;">
-                    <strong>Application:</strong> In the context of the <em>${position}</em>, this reversed card asks you to reflect on these internal blocks or hidden resistances.
+                    <strong>${window.i18n.t("tarot_application", "Application:")}</strong> ${window.i18n.t("tarot_app_rev_desc", "In the context of the <em>{1}</em>, this reversed card asks you to reflect on these internal blocks or hidden resistances.").replace(/\{1\}/g, position)}
                 </p>
             `;
         } else {
             interpretation += `
-                <p><strong>Core Energy:</strong> Upright, this card expresses its energy outward into your life, external circumstances, and conscious awareness.</p>
-                <p style="margin-top: 15px;"><strong>Card Meaning & Themes:</strong> ${card.meaning}</p>
+                <p><strong>${window.i18n.t("tarot_core_energy", "Core Energy:")}</strong> ${window.i18n.t("tarot_upright_energy", "Upright, this card expresses its energy outward into your life, external circumstances, and conscious awareness.")}</p>
+                <p style="margin-top: 15px;"><strong>${window.i18n.t("tarot_card_meaning", "Card Meaning & Themes:")}</strong> ${window.i18n.t("tarot_meaning_" + cardKeyBase + "_up", card.meaning)}</p>
                 <p style="margin-top: 15px; padding: 10px; border: 1px dashed rgba(251, 191, 36, 0.4); border-radius: 8px;">
-                    <strong>Application:</strong> In the context of the <em>${position}</em>, this card actively directs its themes toward resolving or illuminating this area.
+                    <strong>${window.i18n.t("tarot_application", "Application:")}</strong> ${window.i18n.t("tarot_app_up_desc", "In the context of the <em>{1}</em>, this card actively directs its themes toward resolving or illuminating this area.").replace(/\{1\}/g, position)}
                 </p>
             `;
         }

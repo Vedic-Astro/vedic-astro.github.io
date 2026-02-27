@@ -145,8 +145,121 @@ const translations = {
         "business_prediction_text": "Your entrepreneurial journey is blessed by the current Dasha, indicating a powerful period for business ventures and commercial success. The 10th house of profession and the position of Mercury in your chart reveal exceptional opportunities for business growth and establishment.",
         "family_prediction_text": "Your family and home life is entering a harmonious and fulfilling phase. The 4th house of home and family, along with the Moon's position in your chart, reveals beautiful developments in your domestic sphere. Family relationships strengthen and deepen.",
         "travel_prediction_text": "Your travel and adventure sector is highly activated, promising exciting journeys and life-changing experiences. The 9th and 12th houses in your chart, along with the position of Rahu, indicate significant travel opportunities and adventures ahead.",
+        // Legal & Spiritual (Previous translations)
         "legal_prediction_text": "Your legal and justice sector requires careful attention. The 6th house of litigation and the position of Saturn in your chart provide important guidance for navigating legal matters and ensuring justice in your affairs. Prevention is better than cure when it comes to legal issues.",
-        "spiritual_prediction_text": "Your spiritual journey is entering a profound and transformative phase. The 9th and 12th houses in your chart, along with the positions of Jupiter and Ketu, indicate significant spiritual awakening and growth ahead. You'll feel a growing pull toward spiritual practices and deeper meaning in life."
+        "spiritual_prediction_text": "Your spiritual journey is entering a profound and transformative phase. The 9th and 12th houses in your chart, along with the positions of Jupiter and Ketu, indicate significant spiritual awakening and growth ahead. You'll feel a growing pull toward spiritual practices and deeper meaning in life.",
+
+        // Elements & Animals (Bazi)
+        "element_wood": "Wood", "element_fire": "Fire", "element_earth": "Earth", "element_metal": "Metal", "element_water": "Water",
+        "animal_rat": "Rat", "animal_ox": "Ox", "animal_tiger": "Tiger", "animal_rabbit": "Rabbit", "animal_dragon": "Dragon", "animal_snake": "Snake",
+        "animal_horse": "Horse", "animal_goat": "Goat", "animal_monkey": "Monkey", "animal_rooster": "Rooster", "animal_dog": "Dog", "animal_pig": "Pig",
+
+        // Bazi Core Texts
+        "gender_male": "Male", "gender_female": "Female",
+        "bazi_year_pillar_title": "Year Pillar (Ancestors/Early Life)",
+        "bazi_month_pillar_title": "Month Pillar (Parents/Career)",
+        "bazi_day_pillar_title": "Day Pillar (Self/Spouse)",
+        "bazi_hour_pillar_title": "Hour Pillar (Children/Late Life)",
+        "bazi_auth_chart": "User Authentic BaZi Chart Generated",
+        "bazi_day_master": "Your Day Master (Core Self):",
+        "bazi_dm_badge": "Day Master",
+        "bazi_yang_sym": "+ (Yang)", "bazi_yin_sym": "- (Yin)",
+        "bazi_yang": "Yang", "bazi_yin": "Yin",
+        "bazi_personality_assessment": "Personality Assessment",
+        "bazi_wood_plus": "Like a strong, sturdy tree (Jia Wood), you are resilient, determined, and protective. You grow steadily upwards and provide shelter, but can be inflexible if pushed too hard. You are reliable and deeply rooted in your convictions.",
+        "bazi_wood_minus": "Like flexible ivy (Yi Wood), you are highly adaptable, gentle, and brilliant at networking. You know how to maneuver around obstacles and thrive in complex environments by bending rather than breaking.",
+        "bazi_fire_plus": "Like the radiant Sun (Bing Fire), you are exceptionally warm, generous, and highly visible. You naturally bring light and inspiration to others, living life with an infectious, grand passion.",
+        "bazi_fire_minus": "Like a flickering candle (Ding Fire), you are inspiring, illuminating, and intensely focused. You possess profound inner passion, acting as a sensitive, intuitive guide in dark places.",
+        "bazi_earth_plus": "Like a massive mountain (Wu Earth), you are solid, reliable, and deeply grounded. People trust your immense stability. You represent an immovable foundation, though you resist sudden change.",
+        "bazi_earth_minus": "Like rich, fertile soil (Ji Earth), you are highly nurturing, resourceful, and productive. You possess a unique ability to cultivate ideas and care for others, easily adapting to support collective growth.",
+        "bazi_metal_plus": "Like unrefined ore or a heavy axe (Geng Metal), you are tough, enduring, and brutally straightforward. You value justice, loyalty, and efficiency, executing tasks directly with uncompromising willpower.",
+        "bazi_metal_minus": "Like fine jewelry (Xin Metal), you are refined, glamorous, and value aesthetics profoundly. You seek perfection and command attention through your unique shine, utilizing sharp intellect over brute force.",
+        "bazi_water_plus": "Like a powerful ocean (Ren Water), you are intensely dynamic, unstoppable, and highly intelligent. Your mind is always in motion, capable of vast depths, navigating easily through any circumstance.",
+        "bazi_water_minus": "Like morning dew or mist (Gui Water), you are incredibly intuitive, gentle, and imaginative. You penetrate barriers through persistent, quiet action and possess profound emotional sensitivity.",
+
+        "bazi_wealth_level": "Wealth Level & Financial Destiny",
+        "bazi_wealth_strong": "Your chart indicates a <strong>strong affinity for wealth accumulation</strong>. Income flows naturally through business ventures, leadership roles, or real estate (represented by your strong Earth/Metal combinations). You possess entrepreneurial instincts; learning to leverage other people's resources will unlock your highest financial tier.",
+        "bazi_wealth_steady": "Your chart indicates a <strong>steady, secure wealth profile</strong>. Rather than sudden windfalls, your financial growth relies on professional expertise, direct salary, and disciplined saving. Cultivating a specialized skill or acquiring professional licenses is your truest path to long-term financial freedom.",
+
+        "bazi_career_peak": "Career Peak Analysis",
+        "bazi_career_analysis": "Your career sector (located in your Month Pillar: {1} {2}) suggests your primary professional drive peaks in your <strong>mid-30s to late 40s</strong>. The presence of the {2} indicates you will excel in highly analytical, communicative, or leadership-driven environments. Do not rush to the top; your foundation built before age 30 will entirely support your massive elevation later.",
+
+        "bazi_marriage_destiny": "Marriage Destiny & Relationships",
+        "bazi_marriage_analysis": "The Spouse Palace (located in your Day Branch: {1}) dictates your marriage destiny. Because your Day Branch is a <strong>{1}</strong>, you require a partner who is intellectually stimulating, loyal, and capable of giving you independent space. The chart favors waiting until after your first Saturn return (age 28-30) for a highly successful, lifelong marriage commitment.",
+
+        "bazi_life_cycles": "Major Life Cycles (Pillar Analysis)",
+        "bazi_cycle_1": "<strong>Ages 0-20 (Year Pillar - Ancestors):</strong> Governed by {1} {2}. This signifies a foundational era influenced heavily by family karma, early education, and your ancestral roots.",
+        "bazi_cycle_2": "<strong>Ages 21-40 (Month Pillar - Career):</strong> Governed by {1} {2}. This is your prime building phase, where your societal role, primary career path, and interactions with superiors shape your life.",
+        "bazi_cycle_3": "<strong>Ages 41-60 (Day Pillar - Self/Spouse):</strong> Governed by {1} {2}. Your era of self-actualization. This period focuses intensely on your core identity, marriage, and realizing your personal potential.",
+        "bazi_cycle_4": "<strong>Ages 61+ (Hour Pillar - Legacy):</strong> Governed by {1} {2}. Represents your later years, relationship with children/subordinates, and the ultimate legacy, wealth, or wisdom you leave behind.",
+
+        "bazi_upcoming_luck": "Upcoming Luck Trends (Direct Prediction)",
+        "bazi_luck_prediction": "In the immediate upcoming 12-24 months, the dominant cosmic energy shifting into your chart is heavily influenced by <strong>{1}</strong>. Because of this, you will experience a dramatic increase in your social networking and educational opportunities. <strong>Direct Prediction:</strong> Prepare for a significant shift in your physical location or a major pivot in your career duties within the next 18 months. Save cash liquidly and embrace the change—it represents a massive upward leap in your life cycle.",
+
+        "bazi_specific_focus": "Specific Focus Insight",
+        "bazi_timeframe": " during the specified period of <strong>{1} to {2}</strong>",
+        "bazi_your_question": "Your Question:",
+        "bazi_custom_answer": "Based on the elemental balance of your BaZi chart, addressing this specific inquiry requires leveraging your strong {1} nature{2}. Since this is a highly specific query, the chart suggests patience and strategic alignment. The outcome heavily depends on taking calculated, decisive action without acting purely on emotion.",
+        "bazi_cat_answer": "Focusing purely on <strong>{1}</strong>{2}, the BaZi energy indicates a significant turning point. You must utilize the hidden strengths of your {3} {4} profile. If you feel stagnated, it is because your current environment is not feeding your core element. Realigning your daily habits and environment to match your Day Master will unlock the exact breakthrough you seek in this area.",
+
+        // Tarot 
+        "tarot_position_focus": "Position Focus:",
+        "tarot_reversed": "(Reversed)",
+        "tarot_yn_maybe": "MAYBE / YES (Relief from negative forces)",
+        "tarot_yn_no": "NO (Or Not Right Now)",
+        "tarot_yn_nochallenge": "NO (Challenges Ahead)",
+        "tarot_yn_yes": "YES (Positive Momentum)",
+        "tarot_yn_desc": "Based on card orientation and inherent archetype energy.",
+        "tarot_core_energy": "Core Energy:",
+        "tarot_reversed_energy": "When drawn in reverse, the energy of this card turns inward. It suggests internal blockages, delays, or subjective internal experiences.",
+        "tarot_upright_energy": "Upright, this card expresses its energy outward into your life, external circumstances, and conscious awareness.",
+        "tarot_card_meaning": "Card Meaning & Themes:",
+        "tarot_application": "Application:",
+        "tarot_app_rev_desc": "In the context of the <em>{1}</em>, this reversed card asks you to reflect on these internal blocks or hidden resistances.",
+        "tarot_app_up_desc": "In the context of the <em>{1}</em>, this card actively directs its themes toward resolving or illuminating this area.",
+
+        // Tarot Positions
+        "tarot_pos_past": "Past",
+        "tarot_pos_present": "Present",
+        "tarot_pos_future": "Future",
+        "tarot_pos_hiddeninfluences": "Hidden Influences",
+        "tarot_pos_adviceaction": "Advice / Action",
+        "tarot_pos_potentialoutcome": "Potential Outcome",
+        "tarot_pos_guidance": "Guidance",
+        "tarot_pos_yesnooutcome": "Yes / No Outcome",
+
+        "tarot_pos_mean_past": "Events or energies from your past that have led to the current situation.",
+        "tarot_pos_mean_present": "Your current state of mind, the core of the problem, or the immediate circumstances.",
+        "tarot_pos_mean_future": "The likely outcome or direction things are heading if current energies remain unchanged.",
+        "tarot_pos_mean_hiddeninfluences": "Underlying factors, subconscious thoughts, or hidden forces at play you might not be aware of.",
+        "tarot_pos_mean_adviceaction": "The recommended approach, action to take, or perspective to adopt moving forward.",
+        "tarot_pos_mean_potentialoutcome": "The ultimate resolution or long-term result if you follow the advice given.",
+        "tarot_pos_mean_guidance": "Daily insight, cosmic advice, or the overall energy surrounding you right now.",
+        "tarot_pos_mean_yesnooutcome": "A direct answer to your question. Upright cards generally lean towards \"Yes\" or positive momentum, while reversed cards lean towards \"No\" or signify internal blockages and delays.",
+
+        // Tarot Card Names
+        "tarot_card_thefool": "The Fool",
+        "tarot_card_themagician": "The Magician",
+        "tarot_card_thehighpriestess": "The High Priestess",
+        "tarot_card_theempress": "The Empress",
+        "tarot_card_theemperor": "The Emperor",
+        "tarot_card_thehierophant": "The Hierophant",
+        "tarot_card_thelovers": "The Lovers",
+        "tarot_card_thechariot": "The Chariot",
+        "tarot_card_strength": "Strength",
+        "tarot_card_thehermit": "The Hermit",
+        "tarot_card_wheeloffortune": "Wheel of Fortune",
+        "tarot_card_justice": "Justice",
+        "tarot_card_thehangedman": "The Hanged Man",
+        "tarot_card_death": "Death",
+        "tarot_card_temperance": "Temperance",
+        "tarot_card_thedevil": "The Devil",
+        "tarot_card_thetower": "The Tower",
+        "tarot_card_thestar": "The Star",
+        "tarot_card_themoon": "The Moon",
+        "tarot_card_thesun": "The Sun",
+        "tarot_card_judgement": "Judgement",
+        "tarot_card_theworld": "The World"
     },
     my: {
         // Navigation
@@ -294,7 +407,307 @@ const translations = {
         "family_prediction_text": "သင်၏ မိသားစုနှင့် အိမ်တွင်းရေးသည် သာယာအေးချမ်းပြီး ပြည့်စုံသော အဆင့်သို့ ရောက်ရှိလာနေသည်။ မိသားစုကို ကိုယ်စားပြုသော ၄ ခုမြောက်အိမ် (4th house) နှင့် တနင်္လာဂြိုလ် (Moon) ၏ အနေအထားအရ အိမ်တွင်းရေး သာယာမှုနှင့် မိသားစုဝင်များအကြား ဆက်ဆံရေး ပိုမိုခိုင်မာလာမည်ဖြစ်သည်။",
         "travel_prediction_text": "သင်၏ဇာတာတွင် ခရီးသွားလာခြင်းကဏ္ဍသည် အလွန်တက်ကြွနေပြီး စိတ်လှုပ်ရှားဖွယ် ခရီးရှည်များနှင့် ဘဝအပြောင်းအလဲဖြစ်စေမည့် အတွေ့အကြုံများကို ပေးစွမ်းမည်ဖြစ်သည်။ သင်၏ ၉ ခုမြောက် နှင့် ၁၂ ခုမြောက်အိမ်များ (9th and 12th houses) သာမက ရာဟုဂြိုလ်၏ အနေအထားအရ ခရီးသွားလာရန် သိသာထင်ရှားသော အခွင့်အရေးများ ရှိနေသည်။",
         "legal_prediction_text": "ဥပဒေရေးရာကိစ္စများကို အထူးဂရုစိုက်ရန် လိုအပ်သည်။ သင်၏ဇာတာရှိ ၆ ခုမြောက်အိမ် (6th house) နှင့် စနေဂြိုလ် (Saturn) ၏ အနေအထားအရ ဥပဒေရေးရာကိစ္စများကို တရားမျှတစွာ ဖြေရှင်းနိုင်ရန် အကြံပြုထားသည်။ ဥပဒေပြဿနာများနှင့်ပတ်သက်လာလျှင် ဖြစ်လာမှ ဖြေရှင်းခြင်းထက် ကြိုတင်ကာကွယ်ခြင်းက ပို၍ကောင်းမွန်သည်။",
-        "spiritual_prediction_text": "သင်၏ ဘာသာရေးနှင့် စိတ်ပိုင်းဆိုင်ရာ ခရီးလမ်းသည် လေးနက်သော အပြောင်းအလဲကာလတစ်ခုသို့ ရောက်ရှိနေသည်။ ၉ ခုမြောက် နှင့် ၁၂ ခုမြောက်အိမ်များအပြင် ကြာသပတေးဂြိုလ် (Jupiter) နှင့် ကိတ်ဂြိုလ် (Ketu) တို့၏ အနေအထားသည် သိသာထင်ရှားသော စိတ်ပိုင်းဆိုင်ရာ နိုးကြားမှုနှင့် တိုးတက်မှုကို ညွှန်ပြနေသည်။ စိတ်အေးချမ်းမှုနှင့် ဘဝ၏ အဓိပ္ပာယ်အစစ်အမှန်ကို ပိုမိုရှာဖွေလိုစိတ် ပြင်းပြလာမည်ဖြစ်သည်။"
+        "spiritual_prediction_text": "သင်၏ ဘာသာရေးနှင့် စိတ်ပိုင်းဆိုင်ရာ ခရီးလမ်းသည် လေးနက်သော အပြောင်းအလဲကာလတစ်ခုသို့ ရောက်ရှိနေသည်။ ၉ ခုမြောက် နှင့် ၁၂ ခုမြောက်အိမ်များအပြင် ကြာသပတေးဂြိုလ် (Jupiter) နှင့် ကိတ်ဂြိုလ် (Ketu) တို့၏ အနေအထားသည် သိသာထင်ရှားသော စိတ်ပိုင်းဆိုင်ရာ နိုးကြားမှုနှင့် တိုးတက်မှုကို ညွှန်ပြနေသည်။ စိတ်အေးချမ်းမှုနှင့် ဘဝ၏ အဓိပ္ပာယ်အစစ်အမှန်ကို ပိုမိုရှာဖွေလိုစိတ် ပြင်းပြလာမည်ဖြစ်သည်။",
+
+        // Elements & Animals (Bazi - Myanmar)
+        "element_wood": "သစ်သား", "element_fire": "မီး", "element_earth": "မြေ", "element_metal": "သတ္တု", "element_water": "ရေ",
+        "animal_rat": "ကြွက်", "animal_ox": "နွား", "animal_tiger": "ကျား", "animal_rabbit": "ယုန်", "animal_dragon": "နဂါး", "animal_snake": "မြွေ",
+        "animal_horse": "မြင်း", "animal_goat": "ဆိတ်", "animal_monkey": "မျောက်", "animal_rooster": "ကြက်", "animal_dog": "ခွေး", "animal_pig": "ဝက်",
+
+        // Bazi Core Texts (Myanmar)
+        "gender_male": "ကျား", "gender_female": "မ",
+        "bazi_year_pillar_title": "နှစ်တိုင် (ဘိုးဘွား / ငယ်ဘဝ)",
+        "bazi_month_pillar_title": "လတိုင် (မိဘ / လုပ်ငန်း)",
+        "bazi_day_pillar_title": "ရက်တိုင် (မိမိ / အိမ်ထောင်ဖက်)",
+        "bazi_hour_pillar_title": "အချိန်တိုင် (သားသမီး / နောက်ပိုင်းဘဝ)",
+        "bazi_auth_chart": "သင်၏ ပါကျီ ကိုယ်ပိုင်ဇာတာ တွက်ချက်မှု",
+        "bazi_day_master": "Day Master (သင်၏ ပင်ကိုစွမ်းအင်ဗဟို) ဓာတ် -",
+        "bazi_dm_badge": "Day Master",
+        "bazi_yang_sym": "+ (ယန်)", "bazi_yin_sym": "- (ယင်)",
+        "bazi_yang": "ယန်", "bazi_yin": "ယင်",
+        "bazi_personality_assessment": "ကိုယ်ရည်ကိုယ်သွေး ခွဲခြမ်းစိတ်ဖြာချက်",
+        "bazi_wood_plus": "ကြံ့ခိုင်သော သစ်ပင်ကြီးတစ်ပင်ကဲ့သို့ သင်သည် စိတ်ဓာတ်ခိုင်မာပြီး အကာအကွယ်ပေးတတ်သူဖြစ်သည်။ မဆုတ်မနစ် ကြိုးစားတတ်သော်လည်း ဖိအားပေးခံရလျှင် ပြောင်းလဲရန် ခက်ခဲတတ်သည်။ ယုံကြည်ချက် ခိုင်မာသူဖြစ်သည်။",
+        "bazi_wood_minus": "နွယ်ပင်လေးကဲ့သို့ သင်သည် အခြေအနေများကို အလွန်လိုက်လျောညီထွေစွာ နေတတ်ပြီး လူအများနှင့် ပေါင်းသင်းဆက်ဆံရေး ကောင်းမွန်သည်။ အခက်အခဲများကို ကျော်လွှားရန် ညင်သာစွာ ကွေ့ပတ်သွားတတ်သည်။",
+        "bazi_fire_plus": "တောက်ပသော နေမင်းကြီးကဲ့သို့ သင်သည် နွေးထွေးပြီး ရက်ရောကာ လူအများ၏ အာရုံစိုက်မှုကို ရရှိတတ်သည်။ သင့်လုပ်ရပ်များသည် အခြားသူများကို ခွန်အားဖြစ်စေပြီး ဘဝကို စိတ်အားထက်သန်မှု အပြည့်ဖြင့် ဖြတ်သန်းတတ်သည်။",
+        "bazi_fire_minus": "ဖယောင်းတိုင်မီးလေးကဲ့သို့ သင်သည် တည်ငြိမ်ပြီး စူးစိုက်မှုအားကောင်းသည်။ အတွင်းစိတ် ခွန်အားကြီးမားပြီး အမှောင်ထုထဲတွင် အခြားသူများကို လမ်းပြပေးနိုင်သော အကဲဆတ်မှု ရှိသည်။",
+        "bazi_earth_plus": "တောင်တန်းကြီးကဲ့သို့ သင်သည် တည်ငြိမ်ပြီး ယုံကြည်အားထားရသည်။ အခြားသူများက သင့်ကို အားကိုးကြသည်။ သင်သည် အခိုင်အမာ ရပ်တည်တတ်သော်လည်း ရုတ်တရက် အပြောင်းအလဲများကို လက်ခံရန် ခက်ခဲတတ်သည်။",
+        "bazi_earth_minus": "သြဇာပြည့်ဝသော မြေဆီလွှာကဲ့သို့ သင်သည် ပြုစုစောင့်ရှောက်တတ်ပြီး အကျိုးရှိအောင် ဖန်တီးနိုင်စွမ်းရှိသည်။ အခြားသူများ တိုးတက်အောင် ထောက်ပံ့ပေးပြီး အခြေအနေများနှင့် လိုက်လျောညီထွေ နေတတ်သည်။",
+        "bazi_metal_plus": "ချွန်ထက်သော ပုဆိန်ကဲ့သို့ သင်သည် စိတ်ဓာတ်မာကျောပြီး တည့်တည့်ပြောတတ်သည်။ တရားမျှတမှု၊ သစ္စာစောင့်သိမှုနှင့် တိကျသေချာမှုကို တန်ဖိုးထားပြီး ဆုံးဖြတ်ချက်များကို ပြတ်သားစွာ ချမှတ်လေ့ရှိသည်။",
+        "bazi_metal_minus": "လက်ဝတ်ရတနာကဲ့သို့ သင်သည် သပ်ရပ်လှပပြီး အနုပညာကို မြတ်နိုးသည်။ ပြီးပြည့်စုံမှုကို ရှာဖွေတတ်ပြီး အားသုံးခြင်းထက် ဉာဏ်ပညာကို သုံးကာ ဖြေရှင်းတတ်သည်။",
+        "bazi_water_plus": "သမုဒ္ဒရာရေပြင်ကြီးကဲ့သို့ သင်သည် အင်အားကြီးမားပြီး အသိဉာဏ်ထက်မြက်သည်။ စိတ်ကူးများ အမြဲလှုပ်ရှားနေပြီး မည်သည့်အခြေအနေမျိုးကိုမဆို အလွယ်တကူ ဖြတ်သန်းသွားနိုင်စွမ်း ရှိသည်။",
+        "bazi_water_minus": "နှင်းပေါက်လေးကဲ့သို့ သင်သည် အလွန်ထိုးထွင်းသိမြင်နိုင်စွမ်းရှိပြီး ညင်သာသည်။ အတားအဆီးများကို တိတ်ဆိတ်စွာ စိမ့်ဝင်ကျော်လွှားနိုင်ပြီး လေးနက်သော ခံစားချက်များကို နားလည်နိုင်စွမ်းရှိသည်။",
+
+        "bazi_wealth_level": "ငွေကြေး ကံကြမ္မာနှင့် ဓနဥစ္စာ",
+        "bazi_wealth_strong": "ဤဇာတာအရ သင်သည် <strong>ငွေကြေးဥစ္စာ စုဆောင်းနိုင်စွမ်း အလွန်မြင့်မားသည်</strong>။ စီးပွားရေးလုပ်ငန်း၊ ခေါင်းဆောင်မှု၊ သို့မဟုတ် အိမ်ခြံမြေများမှတဆင့် ငွေကြေးစီးဆင်းမှု လွယ်ကူမည်။ သင်၌ စီးပွားရေးအမြင်ရှိပြီး အခြားသူများ၏ ရင်းနှီးမြှုပ်နှံမှုများကို စီမံခန့်ခွဲခြင်းဖြင့် အမြင့်ဆုံးသော ဘဏ္ဍာရေးအဆင့်သို့ ရောက်ရှိနိုင်သည်။",
+        "bazi_wealth_steady": "ဤဇာတာအရ သင်သည် <strong>တည်ငြိမ်ပြီး လုံခြုံသော ငွေကြေးပိုင်ဆိုင်မှု</strong> ရှိသည်။ ရုတ်တရက် ချမ်းသာခြင်းထက် မိမိ၏ ကျွမ်းကျင်မှု၊ ပုံမှန်ဝင်ငွေနှင့် စနစ်တကျ စုဆောင်းခြင်းတို့ဖြင့် ကြီးပွားမည်။ အထူးကျွမ်းကျင်မှုကို သင်ယူခြင်းဖြင့် ရေရှည် ဘဏ္ဍာရေး လွတ်လပ်ခွင့်ကို ရရှိမည်ဖြစ်သည်။",
+
+        "bazi_career_peak": "အသက်မွေးဝမ်းကျောင်းဆိုင်ရာ အမြင့်ဆုံးကာလ",
+        "bazi_career_analysis": "သင့်အလုပ်အကိုင် (လတိုင်အရ {1} {2}) ကဏ္ဍအရ သင့်အသက်မွေးဝမ်းကျောင်း၏ အအောင်မြင်ဆုံး အချိန်သည် <strong>အသက် ၃၀ ကျော်မှ ၄၀ နှောင်းပိုင်း</strong> တွင် ဖြစ်သည်။ သင့်တွင် {2} ရှိနေခြင်းက စီမံခန့်ခွဲမှု၊ ဆက်သွယ်ပြောဆိုမှုနှင့် ခေါင်းဆောင်မှုပိုင်းတွင် အောင်မြင်မည်ဟု ညွှန်ပြနေသည်။ အလျင်မလိုပါနှင့်၊ အသက် ၃၀ မတိုင်မီ တည်ဆောက်ထားသော အုတ်မြစ်သည် နောင်အနာဂတ် အောင်မြင်မှုအတွက် လုံးဝ အထောက်အကူပြုပါလိမ့်မည်။",
+
+        "bazi_marriage_destiny": "အိမ်ထောင်ရေး ကံကြမ္မာ",
+        "bazi_marriage_analysis": "အိမ်ထောင်ရေးကို (ရက်တိုင်အရ {1}) က ကိုယ်စားပြုသည်။ သင့်ရက်တိုင်သည် <strong>{1}</strong> ဖြစ်သောကြောင့် သင့်ကို နားလည်ပေးနိုင်ပြီး လွတ်လပ်ခွင့်ပေးနိုင်သည့် အသိဉာဏ်ရှိသော အိမ်ထောင်ဖက်မျိုး လိုအပ်သည်။ အသက် ၂၈ မှ ၃၀ အထိ စောင့်ပြီးမှ အိမ်ထောင်ပြုပါက ပိုမိုခိုင်မာအောင်မြင်သော အိမ်ထောင်ရေးကို ရရှိမည်။",
+
+        "bazi_life_cycles": "ဘဝ၏ အဓိက အဆင့် ၄ ဆင့်",
+        "bazi_cycle_1": "<strong>အသက် ၀ မှ ၂၀ (နှစ်တိုင် - ဘိုးဘွား) -</strong> {1} {2} ၏ လွှမ်းမိုးမှုအောက်တွင် ရှိသည်။ မိသားစု မျိုးရိုးနှင့် ငယ်ဘဝ ပညာရေးတို့က အနာဂတ်အတွက် အုတ်မြစ်ဖြစ်စေသည်။",
+        "bazi_cycle_2": "<strong>အသက် ၂၁ မှ ၄၀ (လတိုင် - လုပ်ငန်း) -</strong> {1} {2} ၏ လွှမ်းမိုးမှုအောက်တွင် ရှိသည်။ သင်၏ အသက်မွေးဝမ်းကျောင်းနှင့် လူမှုရေးရာ ဆက်ဆံရေးများ တည်ဆောက်ရမည့် အချိန်ဖြစ်သည်။",
+        "bazi_cycle_3": "<strong>အသက် ၄၁ မှ ၆၀ (ရက်တိုင် - မိမိ/အိမ်ထောင်ဖက်) -</strong> {1} {2} ၏ လွှမ်းမိုးမှုအောက်တွင် ရှိသည်။ သင်၏ အိမ်ထောင်ရေး၊ ကိုယ်ပိုင်ရည်မှန်းချက်များ အောင်မြင်မည့်ကာလ ဖြစ်သည်။",
+        "bazi_cycle_4": "<strong>အသက် ၆၁ နှင့်အထက် (အချိန်တိုင် - သားသမီး/အမွေ) -</strong> {1} {2} ၏ လွှမ်းမိုးမှုအောက်တွင် ရှိသည်။ သင်၏ သားသမီးများနှင့် ဆက်ဆံရေး၊ နောက်ပိုင်းဘဝတွင် ချန်ရစ်ခဲ့မည့် အမွေနှင့် ဉာဏ်ပညာကို ကိုယ်စားပြုသည်။",
+
+        "bazi_upcoming_luck": "လာမည့် ကံကြမ္မာ လမ်းကြောင်း (တိုက်ရိုက်ဟောစာတမ်း)",
+        "bazi_luck_prediction": "လာမည့် ၁၂ လမှ ၂၄ လအတွင်း သင့်ဇာတာအတွင်းသို့ <strong>{1}</strong> ဓာတ် စွမ်းအင်များ ဝင်ရောက်လာမည်။ ထို့ကြောင့် လူမှုရေးဆက်ဆံရေးနှင့် ပညာရေး အခွင့်အလမ်းများ သိသိသာသာ တိုးတက်လာမည်။ လာမည့် ၁၈ လအတွင်း မိမိနေထိုင်ရာ နေရာ (သို့) လုပ်ငန်းခွင် တာဝန်များတွင် ကြီးမားသော အပြောင်းအလဲ ဖြစ်လာရန်ရှိသည်။ အပြောင်းအလဲများကို လက်ခံပါ၊ ၎င်းသည် သင့်ဘဝ၏ အကြီးမားဆုံး အဆင့်တက်ခြင်း ဖြစ်လာမည်။",
+
+        "bazi_specific_focus": "သီးသန့် ဟောစာတမ်း",
+        "bazi_timeframe": " အချိန်ကာလ ( <strong>{1} မှ {2}</strong> ) အတွင်း",
+        "bazi_your_question": "သင့်မေးခွန်း -",
+        "bazi_custom_answer": "ပါကျီ ဇာတာ၏ ဓာတ်သဘာဝအရ ဤမေးခွန်းအတွက် သင်၏ {1} ဓာတ် သဘာဝကို အသုံးပြုရန် လိုအပ်သည်{2}။ ဤကိစ္စအတွက် စိတ်ရှည်မှုနှင့် နည်းဗျူဟာမြောက် စီစဉ်မှု လိုအပ်သည်။ စိတ်ခံစားမှုတစ်ခုတည်းဖြင့် မဆုံးဖြတ်ဘဲ တွက်ချက်ပြီး မှန်ကန်သော လုပ်ဆောင်မှုများ ပြုလုပ်ပါက ရလဒ်ကောင်းမည်။",
+        "bazi_cat_answer": "<strong>{1}</strong> ကို အဓိကထားကြည့်လျှင်{2} သိသာသော အချိုးအကွေ့တစ်ခု ရောက်နေသည်ကို တွေ့ရသည်။ သင်၏ {3} {4} သဘာဝကို ဖော်ထုတ်အသုံးပြုပါ။ အကယ်၍ အပြောင်းအလဲမရှိဘဲ ရပ်တန့်နေသည်ဟု ခံစားရပါက လက်ရှိပတ်ဝန်းကျင်သည် သင်၏ ပင်ကိုယ်ဓာတ်နှင့် မကိုက်ညီသောကြောင့် ဖြစ်သည်။ သင့်နေ့စဉ်အလေ့အကျင့်များကို Day Master နှင့် ကိုက်ညီအောင် ပြောင်းလဲပါက အခက်အခဲများ ပြေလည်သွားမည်။",
+
+        // Tarot (Myanmar)
+        "tarot_position_focus": "ချခင်းပုံ အနေအထား -",
+        "tarot_reversed": "(ပြောင်းပြန်)",
+        "tarot_yn_maybe": "ဖြစ်နိုင်သည် / ဟုတ်သည် (အဆိုးများမှ လွတ်မြောက်ခြင်း)",
+        "tarot_yn_no": "မဟုတ်ပါ (သို့မဟုတ် အခု မဟုတ်သေးပါ)",
+        "tarot_yn_nochallenge": "မဟုတ်ပါ (အခက်အခဲများ ရှိနေသည်)",
+        "tarot_yn_yes": "ဟုတ်သည် (ကောင်းမွန်သော တိုးတက်မှု အရှိန်အဟုန်)",
+        "tarot_yn_desc": "ဖဲချပ်၏ အနေအထားနှင့် ဖဲချပ်၏ မူလစွမ်းအင်သဘာဝပေါ် အခြေခံထားသည်။",
+        "tarot_core_energy": "အဓိက စွမ်းအင် -",
+        "tarot_reversed_energy": "ပြောင်းပြန်ကျသောအခါ ဤဖဲချပ်၏ စွမ်းအင်သည် အတွင်းဘက်သို့ လှည့်သွားသည်။ ၎င်းက အတွင်းပိုင်း ပိတ်ဆို့နေမှုများ၊ ကြန့်ကြာမှုများ သို့မဟုတ် ကိုယ်ပိုင် အတွင်းစိတ်အတွေ့အကြုံများကို ညွှန်ပြသည်။",
+        "tarot_upright_energy": "အမှန်အတိုင်းကျသောအခါ ဤဖဲချပ်သည် သင့်ဘဝ၊ ပြင်ပအခြေအနေများနှင့် လက်ရှိသိမြင်နားလည်မှုများဆီသို့ စွမ်းအင်ကို အပြင်ဘက်သို့ ထုတ်လွှတ်သည်။",
+        "tarot_card_meaning": "ဖဲချပ်၏ အဓိပ္ပာယ် နှင့် အကြောင်းအရာများ -",
+        "tarot_application": "အသုံးချမှု -",
+        "tarot_app_rev_desc": "<em>{1}</em> အနေအထားအတွက် ဤပြောင်းပြန်ဖဲချပ်က ထိုအတွင်းပိုင်း ပိတ်ဆို့မှုများ သို့မဟုတ် ဖုံးကွယ်နေသော ငြင်းဆန်မှုများကို ပြန်လည်သုံးသပ်ရန် သင့်ကို တောင်းဆိုနေသည်။",
+        "tarot_app_up_desc": "<em>{1}</em> အနေအထားအတွက် ဤဖဲချပ်က ထိုအကြောင်းအရာများကို ဖြေရှင်းရန် သို့မဟုတ် ထိုအပိုင်းကို လင်းလက်လာစေရန် တက်ကြွစွာ ညွှန်ပြနေသည်။",
+
+        // Tarot Positions
+        "tarot_pos_past": "အတိတ်",
+        "tarot_pos_present": "ပစ္စုပ္ပန်",
+        "tarot_pos_future": "အနာဂတ်",
+        "tarot_pos_hiddeninfluences": "ဖုံးကွယ်နေသော အရာများ",
+        "tarot_pos_adviceaction": "အကြံပေးချက် / လုပ်ဆောင်ရန်",
+        "tarot_pos_potentialoutcome": "ဖြစ်လာနိုင်သော ရလဒ်",
+        "tarot_pos_guidance": "လမ်းညွှန်ချက်",
+        "tarot_pos_yesnooutcome": "ဟုတ်သည် / မဟုတ်ပါ ရလဒ်",
+
+        "tarot_pos_mean_past": "လက်ရှိအခြေအနေသို့ ရောက်ရှိစေခဲ့သော သင့်အတိတ်မှ အဖြစ်အပျက်များ သို့မဟုတ် စွမ်းအင်များ။",
+        "tarot_pos_mean_present": "သင့်လက်ရှိ စိတ်အနေအထား၊ ပြဿနာ၏ အဓိကအချက် (သို့) လက်ရှိအခြေအနေ။",
+        "tarot_pos_mean_future": "လက်ရှိစွမ်းအင်များ မပြ່ຽင်းလဲပါက ရောက်ရှိသွားမည့် ဦးတည်ချက် သို့မဟုတ် ရလဒ်။",
+        "tarot_pos_mean_hiddeninfluences": "သင်သတိမထားမိသော ဖုံးကွယ်နေသည့် အချက်များ၊ စိတ်ခံစားမှုများ သို့မဟုတ် နောက်ကွယ်မှ သက်ရောက်မှုများ။",
+        "tarot_pos_mean_adviceaction": "ရှေ့ဆက်သွားရန် အကြံပြုထားသော ချဉ်းကပ်မှု၊ လုပ်ဆောင်ရမည့် လုပ်ရပ် သို့မဟုတ် ထားရှိရမည့် စိတ်သဘောထား။",
+        "tarot_pos_mean_potentialoutcome": "ပေးထားသော အကြံပေးချက်ကို လိုက်နာပါက ရရှိလာမည့် အဆုံးသတ် ရလဒ်။",
+        "tarot_pos_mean_guidance": "နေ့စဉ် အသိဉာဏ်၊ စကြာဝဠာ၏ အကြံပေးချက် သို့မဟုတ် ယခု သင်၏ပတ်ဝန်းကျင်ရှိ အထွေထွေ စွမ်းအင်။",
+        "tarot_pos_mean_yesnooutcome": "သင့်မေးခွန်းအတွက် တိုက်ရိုက်အဖြေ။ အမှန်ကျသော ဖဲချပ်များသည် 'ဟုတ်သည်' သို့မဟုတ် ကောင်းမွန်သော တိုးတက်မှုကို ညွှန်ပြလေ့ရှိပြီး ပြောင်းပြန်ဖဲချပ်များသည် 'မဟုတ်ပါ' သို့မဟုတ် အတွင်းပိုင်း ပိတ်ဆို့မှုများနှင့် ကြန့်ကြာမှုများကို ကိုယ်စားပြုသည်။",
+
+        // Tarot Card Names
+        "tarot_card_thefool": "အရူး (The Fool)",
+        "tarot_card_themagician": "မျက်လှည့်ဆရာ (The Magician)",
+        "tarot_card_thehighpriestess": "အဓိကယဇ်ပုရောဟိတ်မ (The High Priestess)",
+        "tarot_card_theempress": "မိဖုရား (The Empress)",
+        "tarot_card_theemperor": "ဧကရာဇ် (The Emperor)",
+        "tarot_card_thehierophant": "ယဇ်ပုရောဟိတ် (The Hierophant)",
+        "tarot_card_thelovers": "ချစ်သူများ (The Lovers)",
+        "tarot_card_thechariot": "စစ်ရထား (The Chariot)",
+        "tarot_card_strength": "ခွန်အား (Strength)",
+        "tarot_card_thehermit": "ရသေ့ (The Hermit)",
+        "tarot_card_wheeloffortune": "ကံကြမ္မာဘီး (Wheel of Fortune)",
+        "tarot_card_justice": "တရားမျှတခြင်း (Justice)",
+        "tarot_card_thehangedman": "ဇောက်ထိုးဆွဲထားသူ (The Hanged Man)",
+        "tarot_card_death": "သေခြင်းတရား (Death)",
+        "tarot_card_temperance": "ထိန်းချုပ်ခြင်း (Temperance)",
+        "tarot_card_thedevil": "မိစ္ဆာ (The Devil)",
+        "tarot_card_thetower": "မျှော်စင် (The Tower)",
+        "tarot_card_thestar": "ကြယ် (The Star)",
+        "tarot_card_themoon": "လ (The Moon)",
+        "tarot_card_thesun": "နေ (The Sun)",
+        "tarot_card_theworld": "ကမ္ဘာမြေ (The World)",
+
+        // --- Major Arcana Meanings ---
+        "tarot_meaning_thefool_up": "The Fool သည် ဝိညာဉ်ရေးရာခရီးစဉ်၏ အစကို ကိုယ်စားပြုပြီး အပြစ်ကင်းစင်မှု၊ လွတ်လပ်သောစိတ်ဝိညာဉ်နှင့် ပွင့်လင်းမြင်သာမှုကို ပြသသည်။ ဤဖဲချပ်သည် အစသစ်များ၊ ဘဝသစ်များနှင့် အမည်မသိသောအရာများဆီသို့ မကြောက်မရွံ့ ရဲဝံ့စွာ ခြေလှမ်းလှမ်းရန် ကိုယ်စားပြုသည်။ အနာဂတ်လမ်းကြောင်း မသေချာသော်လည်း စကြာဝဠာကို ယုံကြည်ပြီး ရဲရဲဝံ့ဝံ့ ရှေ့ဆက်ရန် တိုက်တွန်းနေသည်။ သင်၏အတွင်းစိတ်ကလေးငယ်ကို နိုးကြားစေကာ အတွေ့အကြုံသစ်များကို ဖွင့်ဟလက်ခံရန်နှင့် ဘဝကို အကောင်းမြင်စိတ်ဖြင့် ချဉ်းကပ်ရန် အကြံပြုထားသည်။",
+        "tarot_meaning_thefool_rev": "ပြောင်းပြန်ကျနေသော The Fool သည် မဆင်မခြင် ပြုမူခြင်း၊ ဒေါသတကြီး ဆုံးဖြတ်ခြင်းနှင့် မိုက်မဲသော အပြုအမူများကို သတိပေးနေသည်။ သင်သည် သင့်လျော်သော အစီအစဉ်မရှိဘဲ သို့မဟုတ် အကျိုးဆက်များကို မစဉ်းစားဘဲ မလိုအပ်သော အန္တရာယ်များကို ယူနေခြင်း ဖြစ်နိုင်သည်။ မသေချာမရေရာမှုများကို ကြောက်ရွံ့ခြင်းက သင့်ကို ရှေ့ဆက်မလှမ်းနိုင်အောင် တားဆီးထားနိုင်သည်။ သင်သည် အမှန်တရားကို လက်မခံဘဲ တာဝန်ယူမှုကို ရှောင်ရှားနေခြင်း ဖြစ်နိုင်သည်။ ပိုမိုသတိထားရန်နှင့် ဆုံးဖြတ်ချက်မချမီ သေချာစဉ်းစားရန် အချိန်ရောက်ပြီဖြစ်သည်။",
+
+        "tarot_meaning_themagician_up": "The Magician သည် စိတ်ကူးအိပ်မက်များကို လက်တွေ့ဖြစ်လာစေရန် ဖန်တီးနိုင်သည့် စွမ်းအားကို ကိုယ်စားပြုသည်။ ဤဖဲချပ်သည် သင်၏ ရည်မှန်းချက်များကို ရရှိရန် လိုအပ်သော ကျွမ်းကျင်မှု၊ အရင်းအမြစ်များနှင့် အရည်အချင်းများ အပြည့်အစုံရှိနေကြောင်း ညွှန်ပြသည်။ ယုံကြည်မှု၊ တီထွင်ဖန်တီးနိုင်စွမ်းနှင့် ရည်ရွယ်ချက်၏ စွမ်းအားကို ပြသသည်။ သင်သည် ကိုယ်ပိုင်ဘဝကို ဖန်တီးသူဖြစ်ပြီး သင်၏ အရည်အချင်းများကို မှန်ကန်စွာ အသုံးပြုခြင်းဖြင့် အလိုရှိရာကို ဖန်တီးနိုင်ကြောင်း သတိပေးနေသည်။ အပြုသဘောဆောင်သော အပြောင်းအလဲများ ပြုလုပ်ရန် ကောင်းမွန်သော အချိန်ဖြစ်သည်။",
+        "tarot_meaning_themagician_rev": "ပြောင်းပြန်ကျနေသော The Magician သည် လှည့်စားခြင်း၊ မဟုတ်မမှန် လုပ်ဆောင်ခြင်းနှင့် စွမ်းအားကို အလွဲသုံးစားလုပ်ခြင်းတို့ကို သတိပေးနေသည်။ သင်သည် မိမိ၏ အရည်အချင်းများကို တစ်ကိုယ်ကောင်းဆန်သော ရည်ရွယ်ချက်များ သို့မဟုတ် အခြားသူများကို ခြယ်လှယ်ရန် အသုံးပြုနေခြင်း ဖြစ်နိုင်သည်။ အစီအစဉ်မကျခြင်း၊ အာရုံစူးစိုက်မှု မရှိခြင်း သို့မဟုတ် ပန်းတိုင်ရောက်ရန် အဟန့်အတားဖြစ်စေသော အရာများကို ညွှန်ပြနိုင်သည်။ အသုံးမချရသေးသော အလားအလာများ ရှိနေနိုင်သည် (သို့) သင့်ကိုယ်သင် မယုံကြည်ခြင်း ဖြစ်နိုင်သည်။ သင်၏ ရည်ရွယ်ချက်များကို ဆန်းစစ်ရန် လိုအပ်ပါသည်။",
+
+        "tarot_meaning_thehighpriestess_up": "The High Priestess သည် မသိစိတ်၏ အစောင့်အရှောက်ဖြစ်ပြီး မြင့်မြတ်သော အသိပညာကို ထိန်းသိမ်းထားသူ ဖြစ်သည်။ သူမသည် ပင်ကိုယ်အသိစိတ်၊ အတွင်းစိတ်ဉာဏ်ပညာနှင့် ကျွန်ုပ်တို့အားလုံးအတွင်းရှိ နူးညံ့သိမ်မွေ့သော စွမ်းအင်များကို ကိုယ်စားပြုသည်။ ဤဖဲချပ်သည် သင့်အတွင်းစိတ်အသံကို ယုံကြည်ရန်နှင့် အိပ်မက်များ၊ ဗီဇနှင့် ခံစားချက်များကို ဂရုစိုက်ရန် တိုက်တွန်းထားသည်။ အရာခပ်သိမ်းကို ယုတ္တိဗေဒဖြင့်ချည်း နားလည်ရန် မလိုကြောင်းနှင့် အချို့အမှန်တရားများကို ခံစားသိရှိနိုင်မှသာ နားလည်နိုင်ကြောင်း သတိပေးနေသည်။ သင့်အတွင်းစိတ်ခရီးစဉ်ကို လေ့လာရန် အချိန်ဖြစ်သည်။",
+        "tarot_meaning_thehighpriestess_rev": "ပြောင်းပြန်ကျနေသော The High Priestess ဖဲချပ်သည် သင်၏ ပင်ကိုယ်အသိစိတ်နှင့် အတွင်းစိတ်ပညာရပ်တို့နှင့် အဆက်အသွယ်ပြတ်တောက်နေမှုကို ပြသသည်။ သင်သည် ယုတ္တိဗေဒနှင့် ဆင်ခြင်တုံတရားရှိသော တွေးခေါ်မှုများကိုသာ အသားပေးပြီး သင်၏ ပင်ကိုယ်ခံစားချက်များနှင့် အသိစိတ်များကို လျစ်လျူရှုနေခြင်း ဖြစ်နိုင်ပါသည်။ ဤဖဲချပ်သည် သင့်ထံမှ ဖုံးကွယ်ထားသော လျှို့ဝှက်ချက်များ၊ လျှို့ဝှက်အစီအစဉ်များ သို့မဟုတ် သတင်းအချက်အလက်များကို ထိန်ချန်ထားခြင်းတို့ကို ရည်ညွှန်းနိုင်ပါသည်။ အတွင်းအမှန်တရားထက် ပြင်ပအသွင်အပြင်များကို အလွန်အကျွံအာရုံစိုက်နေသည့် အပေါ်ယံဆန်ခြင်းကိုလည်း ညွှန်ပြနိုင်သည်။ သင်၏ ပင်ကိုယ်အသိစိတ်နှင့် ပြန်လည်ချိတ်ဆက်ပါ။",
+
+        "tarot_meaning_theempress_up": "The Empress သည် ပြုစုပျိုးထောင်ခြင်း၊ ကြွယ်ဝပြည့်စုံခြင်း၊ တီထွင်ဖန်တီးနိုင်စွမ်းနှင့် သဘာဝတရားနှင့် နက်ရှိုင်းစွာ ဆက်စပ်နေသော မိခင်စွမ်းအင်ကို ကိုယ်စားပြုသည်။ ရုပ်ပိုင်းဆိုင်ရာတိုးတက်မှု၊ ဖန်တီးမှုအသစ်များ သို့မဟုတ် စိတ်ကူးသစ်များ၏ မွေးဖွားခြင်းအစကို ညွှန်ပြသည်။ သင်၏ဘဝတွင် တိုးတက်မှုနှင့် အောင်မြင်ကြွယ်ဝမှု အချိန်အခါဖြစ်ကြောင်း ပြသနေသည်။ ဘဝ၏ သာယာမှုများကို ခံစားရန်နှင့် သင့်ကိုယ်သင်ရော အခြားသူများကိုပါ ဂရုစိုက်ယုယရန် တိုက်တွန်းထားသည်။ မိမိကိုယ်ကို ချစ်မြတ်နိုးခြင်း၊ ကြင်နာခြင်းနှင့် သဟဇာတဖြစ်အောင် နေထိုင်ခြင်း၏ အရေးကြီးမှုကို သင်ကြားပေးသည်။",
+        "tarot_meaning_theempress_rev": "ပြောင်းပြန်ကျနေသော The Empress သည် ဖန်တီးမှုပိုင်းဆိုင်ရာ ပိတ်ဆို့မှုများ၊ တိုးတက်မှုမရှိခြင်း သို့မဟုတ် မိမိကိုယ်ကိုနှင့် အခြားသူများကို ပြုစုပျိုးထောင်ရန် ခက်ခဲခြင်းများကို ညွှန်ပြနိုင်သည်။ သင်သည် အခြားသူများ၏ အသိအမှတ်ပြုမှုကို အလွန်အကျွံ မှီခိုနေခြင်း သို့မဟုတ် အခြားသူများကို အလွန်အကျွံ ချုပ်ချယ်ဂရုစိုက်ခြင်း ဖြစ်နိုင်သည်။ မိမိ၏ လိုအပ်ချက်များကို လျစ်လျူရှုခြင်း၊ ခန္ဓာကိုယ်၏ အချက်ပြမှုများကို ဂရုမစိုက်ခြင်း သို့မဟုတ် သဘာဝတရားနှင့် အလှအပများမှ ကင်းကွာနေခြင်းကို ညွှန်ပြသည်။ ငွေကြေးဆိုင်ရာ အခက်အခဲများလည်း ရှိနိုင်သည်။ သင့်ကိုယ်သင် ပိုမိုဂရုစိုက်ရန် လိုအပ်သည်။",
+
+        "tarot_meaning_theemperor_up": "The Emperor သည် အာဏာပိုင်ဆိုင်မှု၊ ဖွဲ့စည်းတည်ဆောက်ပုံနှင့် စည်းကမ်းသေဝပ်မှုကို ကိုယ်စားပြုသည်။ ခိုင်မာတည်ကြည်သော၊ ကာကွယ်ပေးသော ဖခင်စွမ်းအင်ကို ကိုယ်စားပြုသည်။ ဤဖဲချပ်သည် ခေါင်းဆောင်မှုအပြည့်ဖြင့် မိမိဘဝကို ထိန်းချုပ်ရန်နှင့် တိကျသော စည်းမျဉ်းများ သတ်မှတ်ရန် ညွှန်ပြသည်။ အခက်အခဲများကို ဗျူဟာကျကျ၊ စနစ်တကျနှင့် အစီအစဉ်တကျ ချဉ်းကပ်ရန် တိုက်တွန်းထားသည်။ သင်၏ဘဝတွင် တည်ငြိမ်မှု ဖန်တီးရန်နှင့် တာဝန်ယူမှု၊ ကတိတည်မှုတို့၏ အရေးကြီးပုံကို ပြသသည်။ ခိုင်မာသော ဆုံးဖြတ်ချက်များချရန်နှင့် ပန်းတိုင်များသတ်မှတ်ရန် လိုအပ်သောအချိန်ဖြစ်သည်။",
+        "tarot_meaning_theemperor_rev": "ပြောင်းပြန်ကျနေသော The Emperor သည် အလွန်အကျွံ ချုပ်ချယ်ခြင်း၊ အာဏာရှင်ဆန်ခြင်းနှင့် အာဏာကို အလွဲသုံးစားလုပ်ခြင်းတို့ကို သတိပေးနေသည်။ အထက်လူကြီးများထံမှ အနိုင်ကျင့်ခံရခြင်း သို့မဟုတ် မိမိကိုယ်တိုင်က အခြားသူများကို ချုပ်ချယ်နေခြင်း ဖြစ်နိုင်သည်။ စည်းကမ်းမရှိခြင်း၊ အစီအစဉ်များကို အကောင်အထည်မဖော်နိုင်ခြင်း သို့မဟုတ် စည်းမျဉ်းများကို ဆန့်ကျင်ခြင်းတို့ကို ညွှန်ပြသည်။ တာဝန်ယူမှုကို ရှောင်ရှားခြင်း သို့မဟုတ် ခေါင်းဆောင်ရန် ငြင်းဆန်ခြင်း ဖြစ်နိုင်သည်။ ပြောင်းလွယ်ပြင်လွယ်မရှိဘဲ တင်းမာလွန်းခြင်းကိုလည်း ညွှန်ပြနိုင်သည်။ အာဏာနှင့် ပတ်သက်သော သင်၏ဆက်ဆံရေးကို ပြန်လည်သုံးသပ်ရန် လိုအပ်သည်။",
+
+        "tarot_meaning_thehierophant_up": "The Hierophant သည် ဘာသာရေးဉာဏ်ပညာ၊ ရိုးရာဓလေ့များနှင့် အဖွဲ့အစည်းဆိုင်ရာ စံနှုန်းများကို ကိုယ်စားပြုသည်။ သူသည် မြင့်မြတ်သောအရာများနှင့် မြေကြီးကို ဆက်သွယ်ပေးသူဖြစ်ပြီး ဝိညာဉ်ရေးရာခရီးစဉ်တွင် လမ်းပြပေးသူဖြစ်သည်။ လူ့အဖွဲ့အစည်း၏ စည်းမျဉ်းများကို လိုက်နာရန်နှင့် အထက်လူကြီးများ သို့မဟုတ် ဆရာသမားများထံမှ လမ်းညွှန်မှုခံယူရန် ညွှန်ပြသည်။ ရိုးရာဓလေ့များကို လေးစားရန်နှင့် ရှေးလူကြီးများထံမှ သင်ယူရန် တိုက်တွန်းထားသည်။ စည်းမျဉ်းများကို လိုက်နာခြင်းသည် တစ်ခါတစ်ရံ ဝိညာဉ်ရေးရာ တိုးတက်မှုအတွက် အရေးပါကြောင်း သင်ကြားပေးသည်။",
+        "tarot_meaning_thehierophant_rev": "ပြောင်းပြန်ကျနေသော The Hierophant သည် ရိုးရာဓလေ့များကို ပုန်ကန်ခြင်း၊ သတ်မှတ်ချက်များကို စိန်ခေါ်ခြင်းနှင့် ယုံကြည်မှုများကို မေးခွန်းထုတ်ခြင်းတို့ကို ညွှန်ပြသည်။ သင်သည် ကန့်သတ်ချုပ်ချယ်ထားသော ဘာသာရေး သို့မဟုတ် ယဉ်ကျေးမှုဆိုင်ရာ အစဉ်အလာများမှ ရုန်းထွက်ပြီး ကိုယ်ပိုင် ဝိညာဉ်ရေးရာလမ်းကြောင်းကို ဖောက်လုပ်နေခြင်း ဖြစ်နိုင်သည်။ စည်းမျဉ်းစည်းကမ်းများကြောင့် အကျဉ်းချခံရသကဲ့သို့ ခံစားရနိုင်သည် သို့မဟုတ် အာဏာပိုင်များနှင့် ပဋိပက္ခဖြစ်နိုင်သည်။ အခြားသူများ သင်ကြားပေးသည်ကို အလွယ်တကူ လက်မခံဘဲ ကိုယ်ပိုင်ယုံကြည်ချက်ကို တည်ဆောက်နေခြင်းဖြစ်သည်။ ထုံးစံနှင့်မညီသော နေထိုင်မှုပုံစံများကို ညွှန်ပြသည်။",
+
+        "tarot_meaning_thelovers_up": "The Lovers ဖဲချပ်သည် နက်နဲသော ဆက်သွယ်မှုများ၊ သဟဇာတဖြစ်မှုနှင့် ရွေးချယ်မှုစွမ်းအားကို ကိုယ်စားပြုသည်။ အချစ်ရေးနှင့် ဆက်သွယ်လေ့ရှိသော်လည်း ဤဖဲချပ်သည် မိတ်ဖက်အဖြစ် ပူးပေါင်းဆောင်ရွက်ခြင်း၊ မိမိအတွင်းရှိ ဆန့်ကျင်ဘက် အရာများကို ပေါင်းစပ်ခြင်းစသော ပေါင်းစည်းမှုပုံစံအားလုံးကို ဆိုလိုသည်။ ဆက်ဆံရေးနှင့် တန်ဖိုးထားမှုများ ပါဝင်သော အရေးကြီးသည့် ဆုံးဖြတ်ချက်များ ချရမည့်အချိန်ကို ညွှန်ပြသည်။ မှန်ကန်သော လမ်းကြောင်းကို ရွေးချယ်ရန်နှင့် ချစ်ခြင်းမေတ္တာအပေါ် အခြေခံ၍ ဆုံးဖြတ်ရန် တိုက်တွန်းထားသည်။",
+        "tarot_meaning_thelovers_rev": "ပြောင်းပြန်ကျနေသော The Lovers သည် ဆက်ဆံရေးများတွင် သဟဇာတမဖြစ်ခြင်း၊ တန်ဖိုးထားမှုများ မတူညီခြင်း သို့မဟုတ် အရေးကြီးသော ဆုံးဖြတ်ချက်များချရန် အခက်အခဲရှိခြင်းတို့ကို ညွှန်ပြသည်။ နှလုံးသားနှင့် ဦးနှောက်ကြားတွင် ပဋိပက္ခဖြစ်နေခြင်း၊ သို့မဟုတ် မိမိကိုယ်ကို ချစ်ခင်လက်ခံနိုင်ရန် ရုန်းကန်နေရခြင်း ဖြစ်နိုင်သည်။ မမျှတသော ဆက်ဆံရေး၊ အလွန်အကျွံ မှီခိုခြင်း သို့မဟုတ် မိမိ၏ယုံကြည်ချက်နှင့် မကိုက်ညီသော လက်တွဲဖော်ကို ရွေးချယ်ခြင်းတို့ကို ညွှန်ပြနိုင်သည်။ အကြောက်တရားပေါ်အခြေခံ၍ ရွေးချယ်မှုများ ပြုလုပ်ခြင်းမှ ရှောင်ရှားရန် အချိန်ဖြစ်သည်။",
+
+        "tarot_meaning_thechariot_up": "The Chariot သည် အောင်ပွဲခံခြင်း၊ စိတ်ပိုင်းဖြတ်ခြင်းနှင့် စူးစိုက်ထားသော စိတ်ဆန္ဒအားကို ကိုယ်စားပြုသည်။ အခက်အခဲများကို မိမိကိုယ်ကို ထိန်းချုပ်မှု၊ ယုံကြည်မှုနှင့် မဆုတ်မနစ် ကြိုးစားအားထုတ်မှုတို့ဖြင့် ကျော်လွှားနိုင်ကြောင်း ပြသသည်။ ဆန့်ကျင်ဘက် အင်အားစုများကို ထိန်းချုပ်ကာ ရည်မှန်းချက်တစ်ခုတည်းဆီသို့ ဦးတည်ခြင်းမှ အောင်မြင်မှုရရှိမည်ဖြစ်သည်။ ယခုအချိန်သည် ရှေ့သို့ တိုးတက်ရန်၊ အခက်အခဲများကို အောင်နိုင်ရန်နှင့် ပန်းတိုင်ဆီသို့ ခိုင်မာစွာ ချီတက်ရန် အကောင်းဆုံးအချိန်ဖြစ်သည်။ မပူပင်ဘဲ မိမိဘဝကို ကိုယ်တိုင် ပြန်လည်ထိန်းချုပ်ရန် တိုက်တွန်းထားသည်။",
+        "tarot_meaning_thechariot_rev": "ပြောင်းပြန်ကျနေသော The Chariot သည် ဦးတည်ချက်ပျောက်ဆုံးခြင်း၊ ထိန်းချုပ်မှု ကင်းမဲ့ခြင်း သို့မဟုတ် အလုပ်များစွာကို တစ်ပြိုင်နက်တည်း လုပ်ဆောင်နေရသဖြင့် အာရုံစူးစိုက်မှု မရှိခြင်းတို့ကို သတိပေးနေသည်။ အဟန့်အတားများ၊ နောက်ပြန်ဆုတ်ရမှုများ သို့မဟုတ် ရည်မှန်းချက်များကို အာရုံမစိုက်နိုင်ခြင်းမျိုး ကြုံတွေ့ရနိုင်သည်။ ကြမ်းတမ်းလွန်းခြင်း သို့မဟုတ် ညင်သာစွာ ချဉ်းကပ်ရမည့် အခြေအနေများတွင် အတင်းအကျပ် လုပ်ဆောင်နေခြင်းတို့ကို ညွှန်ပြသည်။ မိမိကိုယ်ကို စည်းကမ်းမရှိခြင်း၊ အလွယ်တကူ လက်လျှော့ခြင်း သို့မဟုတ် အခက်အခဲများကြောင့် လမ်းကြောင်းမှ သွေဖည်သွားခြင်းတို့ ဖြစ်နိုင်သည်။",
+
+        "tarot_meaning_strength_up": "Strength သည် အတွင်းစိတ်ခွန်အား၊ သတ္တိနှင့် အကြမ်းဖက်ခြင်းထက် ညင်သာစွာ ဖြောင်းဖျနိုင်စွမ်း အင်အားကို ကိုယ်စားပြုသည်။ စစ်မှန်သော ခွန်အားဆိုသည်မှာ ကရုဏာ၊ စိတ်ရှည်ခြင်းနှင့် ကြမ်းတမ်းသော ခံစားချက်များကို မေတ္တာဖြင့် ယဉ်ပါးအောင် ပြုလုပ်နိုင်စွမ်းဖြစ်သည်။ အခက်အခဲများကို ကျော်လွှားနိုင်မည့် အတွင်းစိတ်စွမ်းအား ရှိနေသည်ကို ယုံကြည်ပြီး သတ္တိရှိရှိ ရင်ဆိုင်ရန် တိုက်တွန်းထားသည်။ ၎င်းသည် ခံနိုင်ရည်ရှိခြင်း၊ စိတ်ပိုင်းဖြတ်နိုင်ခြင်းနှင့် ယုံကြည်မှုမှ လာသော တိတ်ဆိတ်လှသည့် စွမ်းအားကို ကိုယ်စားပြုသည်။ အကြမ်းဖက်မှုထက် နားလည်မှုနှင့် မေတ္တာဖြင့် ဖြေရှင်းရန် အချိန်ဖြစ်သည်။",
+        "tarot_meaning_strength_rev": "ပြောင်းပြန်ကျနေသော Strength သည် မိမိကိုယ်ကို မယုံကြည်ခြင်း၊ ခွန်အားကင်းမဲ့ခြင်း သို့မဟုတ် စိတ်ခံစားမှုများကြောင့် လွှမ်းမိုးခံရခြင်းကို ညွှန်ပြသည်။ အားနည်းခြင်း၊ ထိခိုက်လွယ်ခြင်း သို့မဟုတ် တုံ့ပြန်မှုများကို မထိန်းချုပ်နိုင်ခြင်းမျိုး ဖြစ်နိုင်သည်။ အကြောက်တရား သို့မဟုတ် ဒေါသကြောင့် လုပ်ဆောင်ခြင်းမျိုး ကိုယ်စားပြုသည်။ မိမိကိုယ်ကို အပြစ်တင်လွန်းခြင်း သို့မဟုတ် စိန်ခေါ်မှုများကြောင့် အရှုံးပေးချင်စိတ် ဖြစ်ပေါ်နေနိုင်သည်။ အင်အားမသုံးသင့်သည့် နေရာတွင် အင်အားသုံးခြင်းနှင့် အနိုင်ကျင့်ခြင်းတို့ကိုလည်း ညွှန်ပြနိုင်သည်။ မိမိ၏ အတွင်းစိတ်ခွန်အားကို ပြန်လည်ရှာဖွေရန် လိုအပ်သည်။",
+
+        "tarot_meaning_thehermit_up": "The Hermit သည် မိမိကိုယ်ကို သုံးသပ်ခြင်း၊ အထီးကျန်ခြင်းနှင့် အတွင်းစိတ်အမှန်တရားကို ရှာဖွေခြင်းတို့ကို ကိုယ်စားပြုသည်။ အပြင်ကမ္ဘာ၏ ဆူညံသံများမှ ခေတ္တခွာ၍ မိမိအတွင်းစိတ်ခရီးစဉ်ကို အာရုံစိုက်ရန် အချိန်ဖြစ်ကြောင်း ညွှန်ပြသည်။ ဉာဏ်ပညာသည် မိမိအတွင်း၌သာ ရှိကြောင်း သင်ကြားပေးသည်။ မိမိ၏ အတွင်းစိတ်လမ်းညွှန်မှုကို ရှာဖွေရန်နှင့် အခြားသူများထံမှ အဖြေရှာမည့်အစား မိမိကိုယ်တိုင် ရှာဖွေရန် တိုက်တွန်းထားသည်။ နားလည်မှု၊ ကုသမှု သို့မဟုတ် ဘဝလမ်းကြောင်းအတွက် ရှင်းလင်းမှုရရန် တစ်ယောက်တည်း အချိန်ယူရန် လိုအပ်ကြောင်း ပြသသည်။ ကောင်းမွန်သော တသီးတသန့် နေထိုင်ခြင်းကို ဆိုလိုသည်။",
+        "tarot_meaning_thehermit_rev": "ပြောင်းပြန်ကျနေသော The Hermit သည် အလွန်အကျွံ အထီးကျန်ခြင်း၊ အထီးကျန်ဆန်ခြင်း သို့မဟုတ် ကမ္ဘာကြီးမှ ဆုတ်ခွာလွန်းခြင်းကို သတိပေးနေသည်။ လူမှုဆက်ဆံရေးကို ရှောင်ရှားခြင်း၊ အခြားသူများ၏ အကူအညီကို လက်မခံခြင်း သို့မဟုတ် လူ့အဖွဲ့အစည်းမှ ခွဲထွက်နေခြင်း ဖြစ်နိုင်သည်။ လမ်းပျောက်နေခြင်း၊ ရည်မှန်းချက်မရှိခြင်း သို့မဟုတ် မိမိကိုယ်ကို သုံးသပ်သော်လည်း အဖြေမရခြင်းများ ကြုံတွေ့ရနိုင်သည်။ မှန်ကန်သော အကြံပေးချက်များကို လက်မခံခြင်း၊ အတွေ့အကြုံများမှ သင်ခန်းစာမယူခြင်း သို့မဟုတ် အရာအားလုံးကို တစ်ယောက်တည်း ခေါင်းမာမာဖြင့် လုပ်ဆောင်နေခြင်းတို့ကို ညွှန်ပြသည်။",
+
+        "tarot_meaning_wheeloffortune_up": "Wheel of Fortune သည် ဘဝ၏ သံသရာ၊ ကံကြမ္မာနှင့် အပြောင်းအလဲများကို ကိုယ်စားပြုသည်။ အပြောင်းအလဲဆိုသည်မှာ မလွဲမသွေ ဖြစ်ပေါ်လာမည့်အရာဖြစ်ပြီး ဘဝသည် အမြဲတက်လိုက်ကျလိုက် ရှိနေကြောင်း ညွှန်ပြသည်။ မည်သည့်အရာမျှ ထာဝရမတည်မြဲပါ၊ ကောင်းသောအချိန်များ ကုန်ဆုံးသွားသကဲ့သို့ ဆိုးရွားသောအချိန်များလည်း ပြီးဆုံးသွားမည်ဖြစ်သည်။ ၎င်းသည် သင်၏ အတိတ်ကာလ လုပ်ရပ်များ၏ အကျိုးရလဒ်များကို ခံစားရမည့် ကံတရားကို ဖော်ပြသည်။ ဘဝတွင် ကံကောင်းမှုများ၊ အချိုးအကွေ့များနှင့် သိသာသော အခြေအနေများ ပြောင်းလဲသွားခြင်းကို ကြုံတွေ့ရမည်။ အပြောင်းအလဲကို လက်ခံပါ။",
+        "tarot_meaning_wheeloffortune_rev": "ပြောင်းပြန်ကျနေသော Wheel of Fortune သည် ကံဆိုးခြင်း၊ အပြောင်းအလဲကို လက်မခံခြင်း သို့မဟုတ် မကောင်းသော သံသရာထဲတွင် ပိတ်မိနေခြင်းကို ညွှန်ပြသည်။ အတားအဆီးများ၊ စိတ်ပျက်စရာများနှင့် အခြေအနေများ ယိုယွင်းမှုတို့ ကြုံတွေ့ရနိုင်သည်။ ရှောင်လွှဲ၍မရမည့် အပြောင်းအလဲများကို တွန်းလှန်နေခြင်း သို့မဟုတ် ပြီးဆုံးသင့်သော အခြေအနေများကို ဖက်တွယ်ထားခြင်းတို့ ဖြစ်နိုင်သည်။ အပျက်သဘောဆောင်သော ပုံစံများကို ထပ်ခါတလဲလဲ လုပ်ဆောင်နေပြီး ကိုယ့်ကိုယ်ကိုယ် ကံကြမ္မာ၏ သားကောင်အဖြစ် ခံစားနေရနိုင်သည်။ မိမိ၏ လုပ်ရပ်များကို ပြန်လည်သုံးသပ်ပြီး လိုအပ်သော အပြောင်းအလဲများကို လုပ်ဆောင်ရန် အချိန်ဖြစ်သည်။",
+
+        "tarot_meaning_justice_up": "Justice သည် တရားမျှတမှု၊ အမှန်တရားနှင့် အကြောင်းအကျိုး ဆက်စပ်မှုကို ကိုယ်စားပြုသည်။ လုပ်ရပ်တိုင်းတွင် အကျိုးဆက်များ ရှိပြီး ဟန်ချက်ညီအောင် ထိန်းထားရမည်ဖြစ်ကြောင်း ညွှန်ပြသည်။ ကိုယ်စိုက်ပျိုးသည့်အတိုင်း ပြန်လည်ရိတ်သိမ်းရမည်ဖြစ်ပြီး စကြာဝဠာသည် ညီမျှမှုနိယာမအတိုင်း လည်ပတ်နေကြောင်း သင်ကြားပေးသည်။ သင်၏ လုပ်ရပ်များအတွက် တာဝန်ယူရန်နှင့် ရိုးသားမှုရှိရန် အချိန်ဖြစ်သည်။ အရေးကြီးသော ဆုံးဖြတ်ချက်များချရာတွင် အဘက်ဘက်မှ ထည့်သွင်းစဉ်းစားရန် တိုက်တွန်းထားသည်။ ဥပဒေရေးရာကိစ္စများ၊ စာချုပ်စာတမ်းများနှင့်ပတ်သက်၍ အမှန်တရား အနိုင်ရမည်ဖြစ်ကြောင်း ညွှန်ပြသည်။",
+        "tarot_meaning_justice_rev": "ပြောင်းပြန်ကျနေသော Justice သည် တရားမျှတမှုမရှိခြင်း၊ ရိုးသားမှုမရှိခြင်း သို့မဟုတ် တာဝန်ခံမှု ကင်းမဲ့ခြင်းတို့ကို သတိပေးနေသည်။ ဘက်လိုက်ခံရခြင်း သို့မဟုတ် အမှန်တရားကို လိုရာဆွဲ၍ အဓိပ္ပာယ်ဖွင့်ဆိုခံရမှုများ ကြုံတွေ့ရနိုင်သည်။ မိမိ၏ လုပ်ရပ်များအတွက် တာဝန်ယူမှုကို ရှောင်ရှားခြင်း၊ အကျိုးဆက်များကို ရင်ဆိုင်ရန် ငြင်းဆန်ခြင်း သို့မဟုတ် အချက်အလက်များထက် ဘက်လိုက်မှုပေါ် အခြေခံ၍ ဆုံးဖြတ်ခြင်းများ ညွှန်ပြသည်။ သင့်အပေါ် မတရား ဆက်ဆံခံရခြင်း သို့မဟုတ် သင်ကိုယ်တိုင်က အခြားသူများအပေါ် မတရား ဆက်ဆံနေခြင်း ဖြစ်နိုင်သည်။ တရားဥပဒေဆိုင်ရာ ပြဿနာများနှင့် စာချုပ်များ ပျက်ပြယ်ခြင်းမျိုး ဖြစ်နိုင်သည်။",
+
+        "tarot_meaning_thehangedman_up": "The Hanged Man သည် လက်လျှော့အရှုံးပေးခြင်း၊ လွှတ်ချထားခြင်းနှင့် ရှုထောင့်အသစ်မှ မြင်ကြည့်ခြင်းတို့ကို ကိုယ်စားပြုသည်။ ခေတ္တရပ်နားပြီး၊ ကြိုးစားထိန်းချုပ်နေမှုများကို လွှတ်ချထားကာ သဘာဝအတိုင်း ရှင်သန်ရန် အချိန်ရောက်နေကြောင်း ညွှန်ပြသည်။ တစ်ခါတစ်ရံတွင် မည်သို့မျှ မလုပ်ဆောင်ခြင်းသည် အကောင်းဆုံး လုပ်ဆောင်ချက်ဖြစ်ပြီး မျက်မှောက်အခိုက်အတန့်တွင် နစ်မျောနေခြင်းဖြင့် ဉာဏ်အလင်းရနိုင်ကြောင်း သင်ကြားပေးသည်။ ပိုမိုကြီးမားသော အရာအတွက် တစ်စုံတစ်ရာကို စွန့်လွှတ်ရမည့် အချိန်ဖြစ်သည်။ အပြောင်းအလဲများကို လက်ခံပြီး မတူညီသော ရှုထောင့်မှ ချဉ်းကပ်ရန် အကြံပြုထားသည်။",
+        // Hanged man reversed already done 
+        // Oh wait, thehighpriestess rev is done but we have to handle thehangedman reversed, let's include it.
+        "tarot_meaning_thehangedman_rev": "ပြောင်းပြန်ကျနေသော The Hanged Man သည် လိုအပ်သော အပြောင်းအလဲများကို မလုပ်ချင်ခြင်း၊ လွှတ်မချလိုခြင်း သို့မဟုတ် အခြေအနေတစ်ခုတွင် ရှေ့မတိုး နောက်မဆုတ်သာ ပိတ်မိနေခြင်းကို ညွှန်ပြသည်။ ဟောင်းနွမ်းနေသော အရာများကို တွယ်ဖက်ထားခြင်းကြောင့် အရာရာ နှောင့်နှေးကြန့်ကြာမှုများ ကြုံတွေ့နေရနိုင်သည်။ ကိုယ့်ကိုယ်ကိုယ် သနားအောင် လုပ်ခြင်း သို့မဟုတ် မလိုအပ်ဘဲ စွန့်လွှတ်အနစ်နာခံခြင်းများ လုပ်ဆောင်နေခြင်း ဖြစ်နိုင်သည်။ လက်လျှော့သင့်ချိန်တွင် ဇွတ်ထိန်းချုပ်ထားချင်စိတ် ရှိနေသည်။ ကြန့်ကြာနေမှုများကို စွန့်လွှတ်ပြီး ရှုထောင့်အသစ်များကို လက်ခံပါ။",
+
+        "tarot_meaning_death_up": "Death သည် အသွင်ပြောင်းခြင်း၊ ပြီးဆုံးခြင်းနှင့် ဘဝ၏ သဘာဝသံသရာကို ကိုယ်စားပြုသည်။ ဤဖဲချပ်သည် အပြင်ပန်းကြည့်လျှင် ကြောက်စရာကောင်းသော်လည်း ရုပ်ပိုင်းဆိုင်ရာ သေဆုံးမှုကို ပြသရန် အလွန်ရှားပါးသည်။ ၎င်းသည် နက်ရှိုင်းသော ပြောင်းလဲခြင်းနှင့် ကဏ္ဍဟောင်းအဆုံးသတ်၍ ကဏ္ဍသစ် စတင်ခြင်းကို ညွှန်ပြသည်။ ဖွံ့ဖြိုးတိုးတက်ရန်အတွက် ပြောင်းလဲမှုသည် မရှိမဖြစ်လိုအပ်ပြီး အသစ်များအတွက် နေရာရရန် အဟောင်းများ ပြီးဆုံးရမည်ဖြစ်သည်။ အနာကျင်ရဆုံး အချိန်တွင်ပင် ပြောင်းလဲခြင်းကို လက်ခံရန် တိုက်တွန်းထားသည်။ အလုပ်ပြောင်းခြင်း၊ ဆက်ဆံရေးများ ပြီးဆုံးခြင်း စသည့် အကြီးစား အပြောင်းအလဲများကို ဖော်ပြသည်။ ပြီးဆုံးခြင်းများသည် ကျရှုံးမှုမဟုတ်ဘဲ ပြန်လည်မွေးဖွားခြင်း ဖြစ်သည်။",
+        "tarot_meaning_death_rev": "ပြောင်းပြန်ကျနေသော Death သည် အပြောင်းအလဲကို လက်မခံခြင်း၊ ပြီးဆုံးသွားမည်ကို ကြောက်ရွံ့ခြင်း သို့မဟုတ် အတိတ်ကို မစွန့်လွှတ်နိုင်ခြင်းကို ညွှန်ပြသည်။ သင့်အတွက် အကျိုးမပြုတော့သော အခြေအနေများ၊ ဆက်ဆံရေးများ သို့မဟုတ် ဂုဏ်ပုဒ်များကို ဖက်တွယ်ထားခြင်း ဖြစ်နိုင်သည်။ ဤဖဲချပ်သည် တိုးတက်မှု ရပ်တန့်နေခြင်း၊ ရှေ့ဆက်ရန် ငြင်းဆန်ခြင်း သို့မဟုတ် အကူးအပြောင်းကာလတွင် ပိတ်မိနေခြင်းကို ညွှန်ပြသည်။ ပြင်ပအခြေအနေများထက် သင့်အတွင်းစိတ်ပိုင်းဆိုင်ရာ ပြောင်းလဲမှုကို ညွှန်ပြနေခြင်းလည်း ဖြစ်နိုင်သည်။ သက်တမ်းကုန်နေပြီဖြစ်သော အလုပ်၊ အတိတ် သို့မဟုတ် ဆက်ဆံရေးတစ်ခုကို ပြန်လည်အသက်သွင်းရန် မကြိုးစားပါနှင့်။ ပြောင်းလဲမှုကို လက်ခံလိုက်ပါ။",
+
+        "tarot_meaning_temperance_up": "Temperance သည် ဟန်ချက်ညီမှု၊ အလယ်အလတ်လမ်းစဉ်နှင့် ဆန့်ကျင်ဘက်အရာများကို ပေါင်းစပ်ခြင်းတို့ကို ကိုယ်စားပြုသည်။ အစွန်းရောက်ခြင်းများကို ရှောင်ကြဉ်ပြီး တည်ငြိမ်မှုနှင့် ငြိမ်းချမ်းမှုကို ရှာဖွေရန် ညွှန်ပြသည်။ အချိန်ယူ၍ စိတ်ရှည်သည်းခံခြင်းဖြင့် အကောင်းဆုံးရလဒ်များကို ရရှိနိုင်ကြောင်း သင်ကြားပေးသည်။ ဘဝ၏ ကွဲပြားသော အစိတ်အပိုင်းများကို အချိုးညီစွာ ပေါင်းစပ်ပြီး ပြီးပြည့်စုံသော အရာတစ်ခု ဖန်တီးခြင်းကို ကိုယ်စားပြုသည်။ ကုသခြင်းကာလကိုလည်း ညွှန်ပြပြီး မိမိကိုယ်ကိုရော အခြားသူများနှင့်ပါ ငြိမ်းချမ်းစွာ နေထိုင်ရန် တိုက်တွန်းထားသည်။ အတွင်းစိတ်တည်ငြိမ်မှုနှင့် ကြည်လင်ပြတ်သားမှုကို ပြသသည်။",
+        "tarot_meaning_temperance_rev": "ပြောင်းပြန်ကျနေသော Temperance သည် ဟန်ချက်မညီမှု၊ အစွန်းရောက်ခြင်းနှင့် အလွန်အကျွံ ပြုမူခြင်းတို့ကို သတိပေးနေသည်။ အစားအသောက်၊ အလုပ် သို့မဟုတ် အလေ့အကျင့်များတွင် အတိုင်းအတာမဲ့ ပြုမူနေခြင်း ဖြစ်နိုင်သည်။ ဆက်ဆံရေးများတွင် ပဋိပက္ခဖြစ်ခြင်း၊ အမြင်မတူညီမှုများကို မဖြေရှင်းနိုင်ခြင်း သို့မဟုတ် အလျင်စလို ဆုံးဖြတ်ချက်ချခြင်းတို့ကို ညွှန်ပြသည်။ ရေရှည်ရည်မှန်းချက်များကို မေ့လျော့ပြီး ရေတိုသာယာမှုများကိုသာ အာရုံစိုက်နေခြင်း ဖြစ်နိုင်သည်။ ခန္ဓာကိုယ်နှင့် စိတ်ဝိညာဉ် ဟန်ချက်ပျက်နေခြင်းကိုလည်း ညွှန်ပြသည်။ အလယ်အလတ်လမ်းစဉ်ကို ပြန်လည်ရှာဖွေရန် အချိန်ဖြစ်သည်။",
+
+        "tarot_meaning_thedevil_up": "The Devil သည် အချည်နှောင်ခံရခြင်း၊ စွဲလမ်းခြင်းနှင့် ရုပ်ဝတ္ထုပစ္စည်းများအပေါ် လွန်ကဲစွာ တွယ်တာခြင်းကို ကိုယ်စားပြုသည်။ သင်သည် အခြေအနေတစ်ခု သို့မဟုတ် လူတစ်ဦး၏ ချုပ်ကိုင်မှုအောက်တွင် ပိတ်မိနေသကဲ့သို့ ခံစားရနိုင်သည်။ သို့သော် ဤအချည်နှောင်များသည် သင့်ကိုယ်ပိုင်ရွေးချယ်မှုများ သို့မဟုတ် အကြောက်တရားများကြောင့် ဖြစ်ကြောင်း သင်ကြားပေးသည်။ မိမိကိုယ်ကို လှည့်စားခြင်း၊ အပျက်သဘောဆောင်သည့် အလေ့အကျင့်များနှင့် မကောင်းသော လွှမ်းမိုးမှုများကို သတိပေးနေသည်။ မလိုအပ်သော ကြောက်ရွံ့မှုများနှင့် စွဲလမ်းမှုများကို ခွဲခြားသိမြင်ပြီး ၎င်းတို့ထံမှ ရုန်းထွက်ရန် ကြိုးစားဖို့ တိုက်တွန်းထားသည်။",
+        "tarot_meaning_thedevil_rev": "ပြောင်းပြန်ကျနေသော The Devil သည် အချည်နှောင်များမှ လွတ်မြောက်ခြင်း၊ အသိဉာဏ်ပွင့်လင်းလာခြင်းနှင့် မကောင်းသော အလေ့အကျင့်များကို ကျော်လွှားနိုင်ခြင်းတို့ကို ကိုယ်စားပြုသည်။ သင်သည် သင့်အား ချုပ်ကိုင်ထားသော အရာများကို သတိပြုမိလာပြီး ၎င်းတို့ထံမှ ရုန်းထွက်ရန် အဆင်သင့်ဖြစ်နေပြီ ဖြစ်သည်။ အဆိပ်သင့်စေသော ဆက်ဆံရေးများ၊ စွဲလမ်းမှုများ သို့မဟုတ် အပျက်သဘောဆောင်သော တွေးခေါ်မှုပုံစံများကို အဆုံးသတ်ရန် ခွန်အားရရှိလာမည်။ အတွင်းစိတ်မှ ပြန်လည်လွတ်လပ်ခွင့်ရရှိခြင်းနှင့် မိမိကိုယ်ကို ထိန်းချုပ်နိုင်စွမ်း ပြန်လည်ရရှိခြင်းကို ညွှန်ပြသည်။ အလင်းရောင်ဆီသို့ ပြန်လည်လျှောက်လှမ်းရန် အချိန်ဖြစ်သည်။",
+
+        "tarot_meaning_thetower_up": "The Tower သည် ရုတ်တရက် အပြောင်းအလဲများ၊ ပျက်စီးယိုယွင်းမှုများနှင့် မထင်မှတ်ထားသော ပြိုဘက်မှုများကို ကိုယ်စားပြုသည်။ မှားယွင်းသော အခြေခံအဆောက်အအုံများနှင့် ယုံကြည်မှုများ ပြိုလဲသွားခြင်းကို ညွှန်ပြသည်။ မတည်မြဲသော အရာများအပေါ် တည်ဆောက်ထားသမျှ အရာအားလုံး ဖယ်ရှားခံရမည်ဖြစ်သည်။ ဤအတွေ့အကြုံသည် ထိတ်လန့်စရာကောင်းသော်လည်း ပိုမိုခိုင်မာသော အခြေခံအုတ်မြစ်သစ်တစ်ခု တည်ဆောက်ရန်အတွက် မရှိမဖြစ်လိုအပ်ကြောင်း သင်ကြားပေးသည်။ လွတ်မြောက်မှုအတွက် ကြီးမားသော ဘေးအန္တရာယ်တစ်ခု လိုအပ်နေခြင်းဖြစ်သည်။ အမှန်တရား ထင်ရှားလာပြီး ဟန်ဆောင်မှုများ ကင်းစင်သွားမည့် အချိန်ဖြစ်သည်။",
+        "tarot_meaning_thetower_rev": "ပြောင်းပြန်ကျနေသော The Tower သည် ကြီးမားသော ကပ်ဘေးများကို လွတ်မြောက်သွားခြင်း သို့မဟုတ် မလွဲမသွေ ကြုံတွေ့ရမည့် အပြောင်းအလဲများကို ဆန့်ကျင်နေခြင်းကို ညွှန်ပြသည်။ သင်သည် ပျက်စီးတော့မည့် အရာများကို အတင်းအကျပ် ထိန်းသိမ်းထားရန် ကြိုးစားနေခြင်း ဖြစ်နိုင်သည်။ နာကျင်မှုကို ရှောင်လွှဲလို၍ အမှန်တရားကို မျက်ကွယ်ပြုနေခြင်း ဖြစ်နိုင်သည်။ သို့သော် ဤသို့ ရှောင်ရှားခြင်းသည် ပြောင်းလဲမှုကို နှောင့်နှေးစေရုံသာရှိပြီး အနာဂတ်တွင် ပိုမိုဆိုးရွားစွာ ကြုံတွေ့ရနိုင်သည်။ မတည်ငြိမ်မှုများကို လက်ခံပြီး အသစ်ပြန်လည်တည်ဆောက်ရန် ခွင့်ပြုလိုက်ပါ။ တစ်ခါတစ်ရံတွင် ပြိုကျသွားခြင်းသည် အကောင်းဆုံးဖြစ်သည်။",
+
+        "tarot_meaning_thestar_up": "The Star သည် မျှော်လင့်ချက်၊ အနာဂတ်အတွက် ယုံကြည်မှု၊ စိတ်အားထက်သန်မှုနှင့် ကုသခြင်းကို ကိုယ်စားပြုသည်။ အခက်အခဲများ (The Tower) အပြီးတွင် ရောက်ရှိလာသော အေးချမ်းမှုနှင့် ငြိမ်းချမ်းသော အချိန်ကာလကို ပြသသည်။ စကြာဝဠာမှ သင့်ကို စောင့်ရှောက်နေပြီး မှန်ကန်သော လမ်းကြောင်းပေါ်တွင် ရှိနေကြောင်း ညွှန်ပြသည်။ သင့်အတွင်းစိတ်မှ အလင်းရောင်ကို ဖြာထွက်စေရန်နှင့် ရည်မှန်းချက်များကို ရှင်းလင်းစွာ မြင်နိုင်ရန် တိုက်တွန်းထားသည်။ ဝိညာဉ်ရေးရာ အမြင်သစ်များ ပွင့်လင်းလာခြင်းနှင့် အကောင်းမြင်စိတ်ဖြင့် အနာဂတ်ကို ငေးကြည့်ရန် အချိန်ဖြစ်သည်။",
+        "tarot_meaning_thestar_rev": "ပြောင်းပြန်ကျနေသော The Star သည် မျှော်လင့်ချက် ကင်းမဲ့ခြင်း၊ ယုံကြည်မှု ပျောက်ဆုံးခြင်းနှင့် စိတ်ပျက်အားငယ်ခြင်းတို့ကို သတိပေးနေသည်။ အဆိုးမြင်စိတ်များ ဖုံးလွှမ်းနေပြီး အနာဂတ်ကို ကြောက်ရွံ့နေခြင်း ဖြစ်နိုင်သည်။ မိမိကိုယ်ကို မယုံကြည်ခြင်း သို့မဟုတ် စကြာဝဠာနှင့် အဆက်အသွယ် ပြတ်တောက်နေသကဲ့သို့ ခံစားရနိုင်သည်။ စိတ်အားထက်သန်မှုများ ပျောက်ဆုံးနေပြီး လက်ရှိအခြေအနေမှ ရုန်းမထွက်နိုင်သကဲ့သို့ ခံစားရနိုင်သည်။ သို့သော် ဤအရာများသည် သင်၏ စိတ်ပိုင်းဆိုင်ရာ ရှုထောင့်သာဖြစ်ပြီး အမှန်တကယ် မျှော်လင့်ချက် မရှိခြင်း မဟုတ်ပါ။ သင့်ကိုယ်သင် ပြန်လည်ယုံကြည်ပြီး အလင်းရောင်ကို ရှာဖွေရမည်ဖြစ်သည်။",
+
+        "tarot_meaning_themoon_up": "The Moon သည် အိပ်မက်များ၊ ပင်ကိုယ်အသိစိတ်၊ လှည့်စားမှုများနှင့် မသိစိတ်၏ နက်နဲမှုကို ကိုယ်စားပြုသည်။ အရာအားလုံးသည် မြင်ရသည့်အတိုင်း မဟုတ်ကြောင်းနှင့် လျှို့ဝှက်ချက်များ ရှိနေနိုင်ကြောင်း သတိပေးနေသည်။ ကြောက်ရွံ့မှုများနှင့် စိုးရိမ်ပူပန်မှုများက သင့်ဆုံးဖြတ်ချက်များကို မှုန်ဝါးစေနိုင်သည်။ သင့်အတွင်းစိတ်နှင့် မသိစိတ်မှ ပေးပို့သော အချက်ပြမှုများကို ဂရုပြုရန် လိုအပ်သည်။ ရှင်းလင်းပြတ်သားမှု မရှိသော အခြေအနေများတွင် ယုတ္တိဗေဒထက် ပင်ကိုယ်အသိစိတ်ကိုသာ အားကိုးရမည်။ အစစ်အမှန်နှင့် စိတ်ကူးယဉ်ကို ခွဲခြားသိမြင်ရန် ကြိုးစားပါ။",
+        "tarot_meaning_themoon_rev": "ပြောင်းပြန်ကျနေသော The Moon သည် မရေရာမှုများ ရှင်းလင်းသွားခြင်း၊ အမှန်တရား ပေါ်ပေါက်လာခြင်းနှင့် ကြောက်ရွံ့မှုများကို ကျော်လွှားနိုင်ခြင်းတို့ကို ကိုယ်စားပြုသည်။ ဖုံးကွယ်ထားသော လျှို့ဝှက်ချက်များ ပေါ်လာမည်ဖြစ်ပြီး စိတ်ရှုပ်ထွေးမှုများ လျော့ကျသွားမည်ဖြစ်သည်။ သင်သည် ယခင်က နားမလည်ခဲ့သော အရာများကို ရှင်းလင်းစွာ မြင်တွေ့လာရမည်။ သို့သော် မိမိကိုယ်ကို လှည့်စားခြင်းကို ဆက်လက်ဖက်တွယ်ထားခြင်း သို့မဟုတ် အမှန်တရားကို လက်ခံရန် ငြင်းဆန်ခြင်းတို့ကိုလည်း ညွှန်ပြနိုင်သည်။ အဆိုးမြင်စိတ်များနှင့် ပူပန်မှုများမှ လွတ်မြောက်လာပြီး ပိုမိုရှင်းလင်းသော အမြင်ကို ရရှိလာမည်ဖြစ်သည်။",
+
+        "tarot_meaning_thesun_up": "The Sun သည် အောင်မြင်မှု၊ ပျော်ရွှင်မှု၊ အကောင်းမြင်စိတ်နှင့် ဘဝ၏ တက်ကြွမှုကို ကိုယ်စားပြုသည်။ အရာရာ အဆင်ပြေချောမွေ့ပြီး အလင်းရောင်နှင့် နွေးထွေးမှုတို့ ရရှိမည့် အချိန်ဖြစ်သည်။ မိမိကိုယ်ကို ယုံကြည်မှု အပြည့်ရှိပြီး အခြားသူများထံသို့လည်း အပြုသဘောဆောင်သော စွမ်းအင်များကို ဝေမျှပေးနိုင်သည်။ ကြိုးစားသမျှ အရာအားလုံး အောင်မြင်မည်ဖြစ်ပြီး ဖုံးကွယ်ထားသော အမှောင်ထုများအားလုံး ပျောက်ကွယ်သွားမည်ဖြစ်သည်။ ရှင်းလင်းပြတ်သားသော အမြင်နှင့် အပြစ်ကင်းစင်သော ပျော်ရွှင်မှုများကို ဖော်ပြသည်။ ဘဝ၏ ကောင်းကျိုးများကို ခံစားရန်နှင့် မြူးတူးပျော်ရွှင်ရန် အချိန်ဖြစ်သည်။",
+        "tarot_meaning_thesun_rev": "ပြောင်းပြန်ကျနေသော The Sun သည် ပျော်ရွှင်ရန် ခက်ခဲနေခြင်း၊ အဆိုးမြင်စိတ် ဝင်နေခြင်း သို့မဟုတ် ခေတ္တခဏ အောင်မြင်မှု နှောင့်နှေးခြင်းတို့ကို ညွှန်ပြသည်။ အလင်းရောင်ရှိသော်လည်း တိမ်ဖုံးနေသကဲ့သို့ ခံစားရနိုင်သည်။ မိမိကိုယ်ကို အပြည့်အဝ မယုံကြည်နိုင်ခြင်း သို့မဟုတ် ကလေးဆန်လွန်းခြင်း၊ လက်တွေ့မကျခြင်းတို့ကို သတိပေးနေသည်။ သို့သော် The Sun ဖဲချပ်သည် အခြေခံအားဖြင့် အပြုသဘောဆောင်သဖြင့် ပြောင်းပြန်ဖြစ်စေကာမူ ကြီးမားသော ကပ်ဘေးကို မညွှန်ပြပါ။ အခက်အခဲများကို ကျော်လွှားပြီး အကောင်းမြင်စိတ် ပြန်လည်မွေးမြူရန်သာ လိုအပ်သည်။",
+
+        "tarot_meaning_judgement_up": "Judgement သည် ရင့်ကျက်မှု၊ ကိုယ်ပိုင်အသိဉာဏ် တောက်ပလာခြင်းနှင့် မိမိကိုယ်ကို ပြန်လည်ဆန်းစစ်ခြင်းတို့ကို ကိုယ်စားပြုသည်။ အတိတ်ကို ပြန်လည်သုံးသပ်ပြီး သင်ခန်းစာယူကာ အဆင့်အတန်းသစ်တစ်ခုသို့ ကူးပြောင်းရန် အချိန်ရောက်ပြီဖြစ်သည်။ မိမိ၏ လုပ်ရပ်များအတွက် တာဝန်ယူပြီး ခွင့်လွှတ်ခြင်းဖြင့် ဝိညာဉ်ရေးရာ ပြန်လည်မွေးဖွားခြင်းကို ရရှိမည်ဖြစ်သည်။ အရေးကြီးသော ဆုံးဖြတ်ချက်များချရန် လိုအပ်ပြီး ၎င်းသည် သင်၏ အနာဂတ်ကို ပြင်းထန်စွာ သက်ရောက်မှုရှိမည်။ မှားယွင်းမှုများကို အသိအမှတ်ပြုခြင်း၊ မိမိကိုယ်ကို ခွင့်လွှတ်ခြင်းနှင့် အသစ်တစ်ဖန် ပြန်လည်စတင်ရန် အခွင့်အရေး ရရှိမည်ဖြစ်သည်။",
+        "tarot_meaning_judgement_rev": "ပြောင်းပြန်ကျနေသော Judgement သည် မိမိကိုယ်ကို အလွန်အကျွံ အပြစ်တင်ခြင်း၊ အတိတ်မှ အမှားများတွင် ပိတ်မိနေခြင်း သို့မဟုတ် အရေးကြီးသော သင်ခန်းစာများကို လျစ်လျူရှုခြင်းတို့ကို သတိပေးနေသည်။ ပြောင်းလဲရန် အခွင့်အရေးကို ငြင်းဆန်ခြင်း သို့မဟုတ် တိုးတက်ရန် ကြောက်ရွံ့ခြင်း ဖြစ်နိုင်သည်။ အခြားသူများကို မလိုအပ်ဘဲ ဝေဖန်ခြင်း သို့မဟုတ် အပြစ်တင်ခြင်းများ ပြုလုပ်နေနိုင်သည်။ အတိတ်ကို ခွင့်မလွှတ်နိုင်ခြင်းကြောင့် ရှေ့ဆက်ရန် အဟန့်အတားဖြစ်နေသည်။ ချို့ယွင်းချက်များကို လက်ခံပြီး သင်ခန်းစာယူကာ သင့်ကိုယ်သင် အပြစ်တင်ခြင်းမှ ရပ်တန့်ရန် အချိန်ဖြစ်သည်။",
+
+        "tarot_meaning_theworld_up": "The World သည် ပြီးပြည့်စုံမှု၊ အောင်မြင်မှု၊ ပန်းတိုင်ရောက်ရှိခြင်းနှင့် ခရီးစဉ်တစ်ခု၏ အဆုံးသတ်ကို ကိုယ်စားပြုသည်။ အရာအားလုံးသည် ဟန်ချက်ညီစွာ ပေါင်းစပ်သွားပြီး မျှော်မှန်းထားသည့်အတိုင်း အောင်မြင်မှု ရရှိမည်ဖြစ်သည်။ လုပ်ငန်းကြီးများ ပြီးမြောက်ခြင်း၊ ပညာရေး ပြီးဆုံးခြင်း သို့မဟုတ် အရေးကြီးသော ဘဝလည်ပတ်မှုသံသရာတစ်ခု ပြီးဆုံးခြင်းကို ညွှန်ပြသည်။ သင်သည် စကြာဝဠာနှင့် တစ်သားတည်းဖြစ်နေပြီး ခရီးစဉ်တစ်လျှောက် သင်ယူခဲ့ရသည်များကို အသုံးချရန် အဆင်သင့်ဖြစ်နေပြီ။ ပြည်ပခရီးသွားခြင်း သို့မဟုတ် ကမ္ဘာ့အဆင့်မီ အောင်မြင်မှုများကိုလည်း ညွှန်ပြနိုင်သည်။",
+        "tarot_meaning_theworld_rev": "ပြောင်းပြန်ကျနေသော The World သည် ပန်းတိုင်သို့ရောက်ရန် နီးစပ်သော်လည်း အနည်းငယ် လိုအပ်နေသေးကြောင်း သတိပေးနေသည်။ လုပ်ငန်းများ အဆုံးမသတ်နိုင်ခြင်း၊ လိုအပ်သော သင်ခန်းစာများကို မသင်ယူရသေးခြင်း သို့မဟုတ် အဆုံးသတ်ရန် ခက်ခဲနေခြင်းတို့ကို ညွှန်ပြသည်။ အဟောင်းများကို မစွန့်လွှတ်နိုင်သဖြင့် ကဏ္ဍသစ်သို့ မကူးပြောင်းနိုင်ခြင်း ဖြစ်နိုင်သည်။ ထောင့်စေ့အောင် မလုပ်ဆောင်ဘဲ ဖြတ်လမ်းမှ သွားရန် ကြိုးစားနေခြင်းကိုလည်း ညွှန်ပြနိုင်သည်။ သင်၏ ကြိုးစားအားထုတ်မှုများကို အဆုံးသတ်ရန် လိုအပ်သည့် နောက်ဆုံးခြေလှမ်းများကို အာရုံစိုက်ပါ။",
+
+        // --- Minor Arcana Meanings: Wands ---
+        "tarot_meaning_aceofwands_up": "တီထွင်ဖန်တီးမှုအသစ်များ စတင်ခြင်း၊ စိတ်ကူးသစ်များ၊ ဖြစ်နိုင်ချေများနှင့် တိုးတက်မှု အခွင့်အလမ်းများ။",
+        "tarot_meaning_aceofwands_rev": "ပရောဂျက်များတွင် ကြန့်ကြာမှုများ၊ ဦးတည်ချက်ပျောက်ဆုံးခြင်းနှင့် ဖန်တီးမှုပိုင်းဆိုင်ရာ ပိတ်ဆို့မှုများ။",
+        "tarot_meaning_twoofwands_up": "အစီအစဉ်ဆွဲခြင်း၊ ဆုံးဖြတ်ချက်များချခြင်း၊ အနာဂတ်အတွက် မျှော်မှန်းခြင်းနှင့် ကိုယ်ပိုင်စွမ်းအားများ။",
+        "tarot_meaning_twoofwands_rev": "မသိခြင်းကို ကြောက်ရွံ့ခြင်း၊ အစီအစဉ်မရှိခြင်းနှင့် ဆုံးဖြတ်ချက်အမှားများ ချမှတ်ခြင်း။",
+        "tarot_meaning_threeofwands_up": "ချဲ့ထွင်ခြင်း၊ မျှော်မှန်းတွေးခေါ်ခြင်း၊ နိုင်ငံရပ်ခြား အခွင့်အလမ်းများနှင့် တိုးတက်မှုများ။",
+        "tarot_meaning_threeofwands_rev": "အတားအဆီးများ၊ နှောင့်နှေးမှုများနှင့် ကြိုတင်မမြင်နိုင်ခြင်း။",
+        "tarot_meaning_fourofwands_up": "အောင်ပွဲခံခြင်း၊ သဟဇာတဖြစ်ခြင်း၊ အိမ်ပြန်ရောက်ခြင်းနှင့် လူ့အဖွဲ့အစည်းနှင့် ပေါင်းသင်းခြင်း။",
+        "tarot_meaning_fourofwands_rev": "အကူအညီမရရှိခြင်း၊ မတည်ငြိမ်ခြင်းနှင့် ပွဲလမ်းသဘင်များ ဖျက်သိမ်းခံရခြင်း။",
+        "tarot_meaning_fiveofwands_up": "ပြိုင်ဆိုင်မှုများ၊ ပဋိပက္ခများ၊ တင်းမာမှုများနှင့် သဘောထားကွဲလွဲမှုများ။",
+        "tarot_meaning_fiveofwands_rev": "ပဋိပက္ခများကို ရှောင်ရှားခြင်းနှင့် အတွင်းစိတ်ပဋိပက္ခများ ပြေလည်သွားခြင်း။",
+        "tarot_meaning_sixofwands_up": "အောင်ပွဲရရှိခြင်း၊ အောင်မြင်မှု၊ လူသိရှင်ကြား အသိအမှတ်ပြုခံရခြင်းနှင့် တိုးတက်မှု။",
+        "tarot_meaning_sixofwands_rev": "အတ္တကြီးခြင်း၊ အသိအမှတ်ပြုမခံရခြင်းနှင့် အောင်မြင်မှုမှ ကျဆင်းခြင်း။",
+        "tarot_meaning_sevenofwands_up": "စိန်ခေါ်မှုများ၊ ကြိုးစားအားထုတ်ခြင်းနှင့် မိမိနေရာကို ကာကွယ်ခြင်း။",
+        "tarot_meaning_sevenofwands_rev": "လက်လျှော့အရှုံးပေးခြင်း၊ လွှမ်းမိုးခံရခြင်းနှင့် အလွန်အမင်း ပင်ပန်းနွမ်းနယ်ခြင်း။",
+        "tarot_meaning_eightofwands_up": "အရှိန်အဟုန်၊ လှုပ်ရှားမှု၊ တိုးတက်မှုနှင့် မြန်ဆန်သော ဆုံးဖြတ်ချက်များ။",
+        "tarot_meaning_eightofwands_rev": "နှောင့်နှေးကြန့်ကြာမှုများ၊ စိတ်ပျက်အားငယ်ခြင်းနှင့် အပြောင်းအလဲကို ဆန့်ကျင်ခြင်း။",
+        "tarot_meaning_nineofwands_up": "ခံနိုင်ရည်ရှိခြင်း၊ ဇွဲလုံ့လ၊ နောက်ဆုံးကျန်ရှိသော အင်အားနှင့် ကန့်သတ်ချက်များ သတ်မှတ်ခြင်း။",
+        "tarot_meaning_nineofwands_rev": "သံသယဖြစ်ခြင်း၊ ခေါင်းမာခြင်းနှင့် အကူအညီလက်မခံခြင်း။",
+        "tarot_meaning_tenofwands_up": "ဝန်ထုပ်ဝန်ပိုး၊ တာဝန်ဝတ္တရား၊ ပြင်းထန်သော အလုပ်နှင့် စိတ်ဖိစီးမှု။",
+        "tarot_meaning_tenofwands_rev": "ဝန်ထုပ်ဝန်ပိုးများ လျှော့ချခြင်း၊ လုပ်ပိုင်ခွင့်လွှဲပြောင်းပေးခြင်းနှင့် ပြိုကျခြင်း။",
+        "tarot_meaning_pageofwands_up": "စိတ်အားထက်သန်မှု၊ ရှာဖွေလေ့လာမှု၊ တွေ့ရှိမှုများနှင့် လွတ်လပ်သော စိတ်ဝိညာဉ်။",
+        "tarot_meaning_pageofwands_rev": "လမ်းကြောင်းပျောက်ဆုံးခြင်း၊ အချိန်ဆွဲခြင်းနှင့် သတင်းဆိုးများ။",
+        "tarot_meaning_knightofwands_up": "တက်ကြွမှု၊ စိတ်အားထက်သန်မှု၊ စွန့်စားခန်းနှင့် အလျင်စလိုလုပ်ခြင်း။",
+        "tarot_meaning_knightofwands_rev": "မဆင်မခြင်လုပ်ခြင်း၊ အလျင်စလိုလုပ်ခြင်းနှင့် စိတ်ပျက်စရာများ။",
+        "tarot_meaning_queenofwands_up": "ယုံကြည်မှုရှိခြင်း၊ လွတ်လပ်ခြင်း၊ စိတ်ပိုင်းဖြတ်ထားခြင်းနှင့် တက်ကြွမှုရှိခြင်း။",
+        "tarot_meaning_queenofwands_rev": "တစ်ကိုယ်ကောင်းဆန်ခြင်း၊ မနာလိုခြင်းနှင့် မိမိကိုယ်ကို မယုံကြည်ခြင်း။",
+        "tarot_meaning_kingofwands_up": "ခေါင်းဆောင်မှု၊ အနာဂတ်မျှော်မှန်းချက်၊ စီးပွားရေးလုပ်ငန်းရှင်နှင့် ဂုဏ်သိက္ခာ။",
+        "tarot_meaning_kingofwands_rev": "အလျင်စလိုလုပ်ခြင်း၊ အလွန်အကျွံလွှမ်းမိုးခြင်းနှင့် မဖြစ်နိုင်သော မျှော်လင့်ချက်များ။",
+
+        // --- Minor Arcana Meanings: Cups ---
+        "tarot_meaning_aceofcups_up": "အချစ်သစ်၊ စိတ်ခံစားမှုရင့်ကျက်လာခြင်း၊ တီထွင်ဖန်တီးနိုင်စွမ်းနှင့် ဝိညာဉ်ရေးရာများ။",
+        "tarot_meaning_aceofcups_rev": "စိတ်ခံစားမှုပိုင်းဆိုင်ရာ ဆုံးရှုံးမှု၊ ဖန်တီးမှုပိတ်ဆို့ခြင်းနှင့် လဟာပြင်ဖြစ်နေခြင်း။",
+        "tarot_meaning_twoofcups_up": "လက်တွဲဖော်၊ ပေါင်းစည်းခြင်း၊ ဆက်သွယ်မှုနှင့် ဆွဲဆောင်မှု။",
+        "tarot_meaning_twoofcups_rev": "ဟန်ချက်မညီခြင်း၊ အဆက်အသွယ်ပြတ်တောက်ခြင်းနှင့် တင်းမာမှုများ။",
+        "tarot_meaning_threeofcups_up": "အောင်ပွဲခံခြင်း၊ မိတ်ဆွေဖွဲ့ခြင်း၊ လူ့အဖွဲ့အစည်းနှင့် စုဝေးပွဲများ။",
+        "tarot_meaning_threeofcups_rev": "အလွန်အကျွံသုံးစွဲခြင်း၊ အတင်းအဖျင်းပြောခြင်းနှင့် အထီးကျန်ခြင်း။",
+        "tarot_meaning_fourofcups_up": "တရားထိုင်ခြင်း၊ တွေးတောဆင်ခြင်ခြင်း၊ စိတ်မပါဝင်စားခြင်းနှင့် ပြန်လည်သုံးသပ်ခြင်း။",
+        "tarot_meaning_fourofcups_rev": "သတိထားမိခြင်း၊ လက်ခံခြင်းနှင့် ရှေ့ဆက်လှမ်းခြင်း။",
+        "tarot_meaning_fiveofcups_up": "ဆုံးရှုံးခြင်း၊ ဝမ်းနည်းခြင်း၊ စိတ်ပျက်ခြင်းနှင့် နောင်တရခြင်း။",
+        "tarot_meaning_fiveofcups_rev": "လက်ခံနိုင်ခြင်း၊ အတိတ်ကိုမေ့ထားခြင်းနှင့် ငြိမ်းချမ်းမှုရှာတွေ့ခြင်း။",
+        "tarot_meaning_sixofcups_up": "လွမ်းဆွတ်ခြင်း၊ အမှတ်တရများ၊ ကလေးဘဝနှင့် အပြစ်ကင်းစင်ခြင်း။",
+        "tarot_meaning_sixofcups_rev": "အတိတ်တွင်သာ ရှင်သန်နေခြင်းနှင့် လက်တွေ့မကျသော မျှော်လင့်ချက်များ။",
+        "tarot_meaning_sevenofcups_up": "ရွေးချယ်စရာများ၊ ထင်ယောင်ထင်မှားဖြစ်ခြင်း၊ စိတ်ကူးယဉ်ခြင်းနှင့် ဖြစ်ချင်တာကိုသာ တွေးခြင်း။",
+        "tarot_meaning_sevenofcups_rev": "ရှင်းလင်းပြတ်သားမှု၊ စိတ်ပိုင်းဖြတ်ခြင်းနှင့် ဆုံးဖြတ်ချက်ချခြင်း။",
+        "tarot_meaning_eightofcups_up": "ထွက်ခွာသွားခြင်း၊ မျှော်လင့်ချက်ပျက်သုဉ်းခြင်းနှင့် နောက်ချန်ရစ်ခဲ့ခြင်း။",
+        "tarot_meaning_eightofcups_rev": "အပြောင်းအလဲကိုကြောက်ရွံ့ခြင်း၊ တိုးတက်မှုမရှိခြင်းနှင့် ရည်မှန်းချက်မဲ့ လွင့်မျောနေခြင်း။",
+        "tarot_meaning_nineofcups_up": "ကျေနပ်ရောင့်ရဲခြင်း၊ စိတ်ကျေနပ်မှုရရှိခြင်းနှင့် ဆန္ဒများပြည့်ဝခြင်း။",
+        "tarot_meaning_nineofcups_rev": "လောဘကြီးခြင်း၊ စိတ်မကျေနပ်ခြင်းနှင့် ရုပ်ဝတ္ထုပစ္စည်းများကိုသာ ခုံမင်ခြင်း။",
+        "tarot_meaning_tenofcups_up": "သဟဇာတဖြစ်ခြင်း၊ ပျော်ရွှင်ခြင်း၊ ကိုက်ညီမှုရှိခြင်းနှင့် မိသားစုအတွင်း သာယာခြင်း။",
+        "tarot_meaning_tenofcups_rev": "အဆက်အသွယ်ပြတ်တောက်ခြင်း၊ သဟဇာတမဖြစ်ခြင်းနှင့် မိသားစုပြိုကွဲခြင်း။",
+        "tarot_meaning_pageofcups_up": "ဖန်တီးမှုအခွင့်အလမ်းများ၊ စူးစမ်းလိုစိတ်နှင့် ပင်ကိုယ်အသိစိတ်မှ သတင်းစကားများ။",
+        "tarot_meaning_pageofcups_rev": "စိတ်ခံစားမှုမရင့်ကျက်ခြင်းနှင့် ဖန်တီးမှုပိုင်းဆိုင်ရာ ပိတ်ဆို့မှုများ။",
+        "tarot_meaning_knightofcups_up": "ရိုမန်တစ်ဆန်ခြင်း၊ ဆွဲဆောင်မှုရှိခြင်း၊ စိတ်ကူးယဉ်တတ်ခြင်းနှင့် အလှတရား။",
+        "tarot_meaning_knightofcups_rev": "စိတ်အပြောင်းအလဲမြန်ခြင်း၊ စိတ်ပျက်ခြင်းနှင့် လက်တွေ့မကျခြင်း။",
+        "tarot_meaning_queenofcups_up": "ကရုဏာထားခြင်း၊ တည်ငြိမ်ခြင်း၊ သက်တောင့်သက်သာရှိစေခြင်းနှင့် ပင်ကိုယ်အသိစိတ်။",
+        "tarot_meaning_queenofcups_rev": "မိမိကိုယ်ကိုမယုံကြည်ခြင်း၊ အလွန်အကျွံ ပေးဆပ်ခြင်းနှင့် အနစ်နာခံလွန်းခြင်း။",
+        "tarot_meaning_kingofcups_up": "စိတ်ခံစားမှုကို ထိန်းချုပ်နိုင်ခြင်း၊ အုပ်ချုပ်နိုင်ခြင်း၊ ရက်ရောခြင်းနှင့် သံတမန်ဆန်ခြင်း။",
+        "tarot_meaning_kingofcups_rev": "အေးစက်ခြင်း၊ စိတ်အပြောင်းအလဲမြန်ခြင်းနှင့် အခြားသူများကို ခြယ်လှယ်ခြင်း။",
+
+        // --- Minor Arcana Meanings: Swords ---
+        "tarot_meaning_aceofswords_up": "အောင်မြင်မှုရရှိခြင်း၊ ရှင်းလင်းပြတ်သားခြင်း၊ ထက်မြက်သောစိတ်နှင့် စိတ်ကူးသစ်များ။",
+        "tarot_meaning_aceofswords_rev": "ရှုပ်ထွေးမှုများ၊ ပရမ်းပတာဖြစ်ခြင်းနှင့် ရှင်းလင်းပြတ်သားမှုမရှိခြင်း။",
+        "tarot_meaning_twoofswords_up": "ခက်ခဲသောဆုံးဖြတ်ချက်များ၊ အကျပ်ရိုက်ခြင်းနှင့် ရှောင်လွှဲခြင်း။",
+        "tarot_meaning_twoofswords_rev": "မဆုံးဖြတ်နိုင်ခြင်း၊ ရှုပ်ထွေးခြင်းနှင့် အချက်အလက်များ လွန်ကဲနေခြင်း။",
+        "tarot_meaning_threeofswords_up": "အသည်းကွဲခြင်း၊ ဝမ်းနည်းခြင်း၊ ပူဆွေးခြင်းနှင့် နာကျင်ဖွယ်ရာ အမှန်တရား။",
+        "tarot_meaning_threeofswords_rev": "ပြန်လည်နာလန်ထူခြင်း၊ ခွင့်လွှတ်ခြင်းနှင့် ရှေ့ဆက်လှမ်းခြင်း။",
+        "tarot_meaning_fourofswords_up": "အနားယူခြင်း၊ ပြန်လည်ကောင်းမွန်လာခြင်း၊ တွေးတောဆင်ခြင်ခြင်းနှင့် အားမွေးခြင်း။",
+        "tarot_meaning_fourofswords_rev": "ဂနာမငြိမ်ဖြစ်ခြင်း၊ ပင်ပန်းနွမ်းနယ်ခြင်းနှင့် တိုးတက်မှုမရှိခြင်း။",
+        "tarot_meaning_fiveofswords_up": "ပဋိပက္ခ၊ ရှုံးနိမ့်ခြင်းနှင့် မည်သည့်နည်းဖြင့်မဆို အနိုင်ယူလိုခြင်း။",
+        "tarot_meaning_fiveofswords_rev": "ပြန်လည်သင့်မြတ်ခြင်း၊ အမှားပြင်ဆင်ခြင်းနှင့် အတိတ်မှ နာကြည်းချက်များ။",
+        "tarot_meaning_sixofswords_up": "အကူးအပြောင်း၊ အပြောင်းအလဲ၊ ရှေ့ဆက်လှမ်းခြင်းနှင့် ခရီးသွားခြင်း။",
+        "tarot_meaning_sixofswords_rev": "အပြောင်းအလဲကိုဆန့်ကျင်ခြင်းနှင့် မပြီးပြတ်သေးသော ကိစ္စများ။",
+        "tarot_meaning_sevenofswords_up": "လှည့်စားခြင်း၊ ဗျူဟာကျခြင်းနှင့် တစ်ခုခုကို လွတ်မြောက်အောင် လုပ်ဆောင်ခြင်း။",
+        "tarot_meaning_sevenofswords_rev": "အမှန်အတိုင်းဝန်ခံခြင်းနှင့် ချဉ်းကပ်ပုံကို ပြန်လည်စဉ်းစားခြင်း။",
+        "tarot_meaning_eightofswords_up": "ကန့်သတ်ခံရခြင်း၊ အကျဉ်းချခံရခြင်းနှင့် သားကောင်ဖြစ်နေသည်ဟု ခံစားရခြင်း။",
+        "tarot_meaning_eightofswords_rev": "လွတ်လပ်ခြင်း၊ လွတ်မြောက်ခြင်းနှင့် အမြင်သစ်ရရှိခြင်း။",
+        "tarot_meaning_nineofswords_up": "စိုးရိမ်ပူပန်ခြင်း၊ ကြောက်ရွံ့ခြင်းနှင့် အိပ်မက်ဆိုးများ မက်ခြင်း။",
+        "tarot_meaning_nineofswords_rev": "မျှော်လင့်ချက်ထားခြင်း၊ အကူအညီတောင်းခံခြင်းနှင့် ပြန်လည်သက်သာလာခြင်း။",
+        "tarot_meaning_tenofswords_up": "နာကျင်စွာ အဆုံးသတ်ခြင်း၊ သစ္စာဖောက်ခံရခြင်းနှင့် အဆိုးရွားဆုံး အခြေအနေရောက်ခြင်း။",
+        "tarot_meaning_tenofswords_rev": "ပြန်လည်သက်သာလာခြင်း၊ အသစ်ပြန်ဖြစ်ခြင်းနှင့် အဆုံးသတ်ကို ဆန့်ကျင်ခြင်း။",
+        "tarot_meaning_pageofswords_up": "စူးစမ်းလိုစိတ်၊ ဂနာမငြိမ်ဖြစ်ခြင်းနှင့် စိတ်ပိုင်းဆိုင်ရာ တက်ကြွမှု။",
+        "tarot_meaning_pageofswords_rev": "အတင်းအဖျင်းပြောခြင်း၊ လှည့်စားခြင်းနှင့် အစီအစဉ်မရှိခြင်း။",
+        "tarot_meaning_knightofswords_up": "လှုပ်ရှားခြင်း၊ အလျင်စလိုလုပ်ခြင်းနှင့် မိမိယုံကြည်ချက်ကို ကာကွယ်ခြင်း။",
+        "tarot_meaning_knightofswords_rev": "မဆင်မခြင်လုပ်ခြင်းနှင့် အာရုံစူးစိုက်မှုမရှိသော စွမ်းအင်။",
+        "tarot_meaning_queenofswords_up": "လွတ်လပ်ခြင်း၊ ရှင်းလင်းစွာ တွေးခေါ်နိုင်ခြင်းနှင့် တိုက်ရိုက်ပြောဆိုဆက်သွယ်ခြင်း။",
+        "tarot_meaning_queenofswords_rev": "အေးစက်ခြင်း၊ ခါးသီးခြင်းနှင့် ရိုင်းစိုင်းခြင်း။",
+        "tarot_meaning_kingofswords_up": "စိတ်ပိုင်းဆိုင်ရာ ရှင်းလင်းပြတ်သားခြင်း၊ ဉာဏ်ရည်ထက်မြက်ခြင်း၊ အာဏာရှိခြင်းနှင့် အမှန်တရား။",
+        "tarot_meaning_kingofswords_rev": "လှည့်စားတတ်ခြင်း၊ ရက်စက်ခြင်းနှင့် အားနည်းခြင်း။",
+
+        // --- Minor Arcana Meanings: Pentacles ---
+        "tarot_meaning_aceofpentacles_up": "ဘဏ္ဍာရေးအခွင့်အလမ်းသစ်၊ ကြွယ်ဝချမ်းသာခြင်းနှင့် လက်တွေ့အကောင်အထည်ပေါ်ခြင်း။",
+        "tarot_meaning_aceofpentacles_rev": "အခွင့်အရေးလက်လွတ်ခြင်းနှင့် အစီအစဉ်မရှိခြင်း။",
+        "tarot_meaning_twoofpentacles_up": "ဟန်ချက်ညီခြင်း၊ လိုက်လျောညီထွေဖြစ်ခြင်းနှင့် အချိန်စီမံခန့်ခွဲမှုကောင်းခြင်း။",
+        "tarot_meaning_twoofpentacles_rev": "ဟန်ချက်မညီခြင်း၊ စနစ်မကျခြင်းနှင့် ဝန်ပိနေခြင်း။",
+        "tarot_meaning_threeofpentacles_up": "အဖွဲ့လိုက်ဆောင်ရွက်ခြင်း၊ ပူးပေါင်းလုပ်ဆောင်ခြင်း၊ သင်ယူခြင်းနှင့် အကောင်အထည်ဖော်ခြင်း။",
+        "tarot_meaning_threeofpentacles_rev": "အဖွဲ့အစည်းစိတ်ဓာတ်မရှိခြင်း၊ သဟဇာတမဖြစ်ခြင်းနှင့် အရည်အသွေးညံ့ဖျင်းခြင်း။",
+        "tarot_meaning_fourofpentacles_up": "ထိန်းချုပ်ခြင်း၊ တည်ငြိမ်ခြင်း၊ လုံခြုံခြင်းနှင့် စုဆောင်းသိမ်းဆည်းခြင်း။",
+        "tarot_meaning_fourofpentacles_rev": "လောဘကြီးခြင်း၊ ရုပ်ဝတ္ထုမက်မောခြင်းနှင့် မိမိကိုယ်ကို အကာအကွယ်ပေးလွန်းခြင်း။",
+        "tarot_meaning_fiveofpentacles_up": "ငွေကြေးဆုံးရှုံးခြင်း၊ ဆင်းရဲခြင်း၊ မလုံခြုံခြင်းနှင့် အထီးကျန်ခြင်း။",
+        "tarot_meaning_fiveofpentacles_rev": "ပြန်လည်နာလန်ထူခြင်း၊ ပေးကမ်းလှူဒါန်းခြင်းနှင့် တိုးတက်လာခြင်း။",
+        "tarot_meaning_sixofpentacles_up": "ရက်ရောခြင်း၊ ပေးကမ်းခြင်း၊ မျှဝေခြင်းနှင့် တရားမျှတခြင်း။",
+        "tarot_meaning_sixofpentacles_rev": "အကြွေးတင်ခြင်း၊ သတ်မှတ်ချက်များ ပါဝင်နေခြင်းနှင့် မညီမျှခြင်း။",
+        "tarot_meaning_sevenofpentacles_up": "ရေရှည်မျှော်တွေးခြင်း၊ ဇွဲလုံ့လရှိခြင်းနှင့် ရင်းနှီးမြှုပ်နှံခြင်း။",
+        "tarot_meaning_sevenofpentacles_rev": "အကျိုးအမြတ်မရရှိခြင်းနှင့် စိတ်မရှည်ခြင်း။",
+        "tarot_meaning_eightofpentacles_up": "အလုပ်သင်ခြင်း၊ ကျွမ်းကျင်မှု မြှင့်တင်ခြင်းနှင့် အရည်အသွေးပြည့်ဝသော အလုပ်။",
+        "tarot_meaning_eightofpentacles_rev": "အာရုံစူးစိုက်မှုမရှိခြင်း၊ ပြီးပြည့်စုံလွန်းရန် ကြိုးစားခြင်းနှင့် လမ်းကြောင်းမှားခြင်း။",
+        "tarot_meaning_nineofpentacles_up": "ပေါကြွယ်ဝခြင်း၊ ဇိမ်ကျကျနေထိုင်ခြင်း၊ ကိုယ့်ကိုယ်ကိုယ် ရပ်တည်နိုင်ခြင်းနှင့် ငွေကြေးလွတ်လပ်ခွင့်ရခြင်း။",
+        "tarot_meaning_nineofpentacles_rev": "အလွန်အကျွံ အလုပ်လုပ်ခြင်း၊ အတင်းအကျပ် ရှာဖွေခြင်းနှင့် မိမိတန်ဖိုး။",
+        "tarot_meaning_tenofpentacles_up": "ကြွယ်ဝချမ်းသာခြင်း၊ အမွေရခြင်း၊ မိသားစုနှင့် အခြေချနေထိုင်ခြင်း။",
+        "tarot_meaning_tenofpentacles_rev": "ဘဏ္ဍာရေး ကျရှုံးခြင်း၊ အထီးကျန်ခြင်းနှင့် ဆုံးရှုံးခြင်း။",
+        "tarot_meaning_pageofpentacles_up": "လက်တွေ့အကောင်အထည်ဖော်ခြင်း၊ ဘဏ္ဍာရေး အခွင့်အလမ်းနှင့် အလုပ်သစ်။",
+        "tarot_meaning_pageofpentacles_rev": "တိုးတက်မှုမရှိခြင်းနှင့် အချိန်ဆွဲခြင်း။",
+        "tarot_meaning_knightofpentacles_up": "ကြိုးစားအားထုတ်ခြင်း၊ အထွက်တိုးခြင်း၊ ပုံမှန်လုပ်ရိုးလုပ်စဉ်နှင့် ရှေးရိုးစွဲဝါဒ။",
+        "tarot_meaning_knightofpentacles_rev": "ပျင်းရိခြင်း၊ စွဲလမ်းလွန်းခြင်းနှင့် အကျိုးခံစားခွင့်မရှိသော အလုပ်။",
+        "tarot_meaning_queenofpentacles_up": "လက်တွေ့ကျခြင်း၊ အိမ်မှုကိစ္စနိုင်ပင်းခြင်း၊ မိခင်ဆန်ခြင်းနှင့် ရိုးရှင်းခြင်း။",
+        "tarot_meaning_queenofpentacles_rev": "ကိုယ့်ကိုယ်ကိုယ် ဂရုမစိုက်ခြင်းနှင့် အလုပ်နှင့် အိမ် ဟန်ချက်မညီခြင်း။",
+        "tarot_meaning_kingofpentacles_up": "ချမ်းသာကြွယ်ဝခြင်း၊ စီးပွားရေး၊ ခေါင်းဆောင်မှု၊ လုံခြုံမှုနှင့် စည်းကမ်းရှိခြင်း။",
+        "tarot_meaning_kingofpentacles_rev": "လောဘကြီးခြင်း၊ အလွန်အကျွံသုံးစွဲခြင်းနှင့် ကာမဂုဏ်ခံစားခြင်း။"
     }
 };
 
@@ -352,8 +765,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.i18n = {
     setLanguage,
-    t: function (key) {
-        return translations[currentLanguage][key] || translations['en'][key] || key;
+    t: function (key, defaultValue = "") {
+        return translations[currentLanguage][key] || (translations['en'] && translations['en'][key]) || defaultValue || key;
     },
     getCurrentLang: () => currentLanguage
 };

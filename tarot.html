@@ -315,6 +315,12 @@
                 <a href="bazi.html" class="nav-item">Bazi (4 Pillars)</a>
                 <a href="tarot.html" class="nav-item active">Tarot Reading</a>
             </div>
+            <div class="lang-toggle" style="margin-left: 15px; display: flex; gap: 5px;">
+                <button class="lang-btn active" data-lang="en" onclick="window.i18n.setLanguage('en')"
+                    style="background: transparent; border: 1px solid var(--accent-glow); color: var(--text-light); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">EN</button>
+                <button class="lang-btn" data-lang="my" onclick="window.i18n.setLanguage('my')"
+                    style="background: transparent; border: 1px solid var(--accent-glow); color: var(--text-light); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">MY</button>
+            </div>
         </div>
     </nav>
 
@@ -370,6 +376,7 @@
         </div>
     </div>
 
+    <script src="js/i18n.js"></script>
     <script src="js/tarot-full.js"></script>
     <script src="js/tarot.js"></script>
 

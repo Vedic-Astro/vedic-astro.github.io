@@ -183,12 +183,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const renderPillar = (title, data, isDayMaster) => {
             return `
                 <div class="pillar-card">
-                    ${isDayMaster ? '<div class="day-master-badge">Day Master</div>' : ''}
+                    ${isDayMaster ? `<div class="day-master-badge">Day Master</div>` : ''}
                     <div class="pillar-title">${title}</div>
                     
                     <div class="stem ${data.stem.colorClass}">
                         <div class="element-symbol">${data.stem.char}</div>
-                        <div class="element-name">${data.stem.element} ${data.stem.polarity}</div>
+                        <div class="element-name">${data.stem.element} ${data.stem.polarity === '+' ? "+ (Yang)" : "- (Yin)"}</div>
                         <div class="pinyin">${data.stem.pinyin}</div>
                     </div>
 
@@ -208,91 +208,118 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML += renderPillar('Hour Pillar (Children/Late Life)', bazi.hour, false);
 
         const dm = bazi.day.stem;
+        const tElement = (el) => window.i18n.t("element_" + el.toLowerCase(), el);
+        const tAnimal = (an) => window.i18n.t("animal_" + an.toLowerCase(), an);
+
         let reading = `
             <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 20px;">
                 <h3 style="margin-top: 0;">User Authentic BaZi Chart Generated</h3>
                 <p style="margin-bottom: 5px;"><strong>Date:</strong> ${birthDate.toDateString()} at ${birthDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
                 <p style="margin-bottom: 5px;"><strong>Location:</strong> ${location}</p>
-                <p style="margin-bottom: 5px;"><strong>Gender:</strong> ${gender.charAt(0).toUpperCase() + gender.slice(1)}</p>
-                <p style="color: var(--accent-glow); margin-top: 15px;">Your Day Master (Core Self): <strong>${dm.element} ${dm.polarity} (${dm.pinyin})</strong></p>
+                <p style="margin-bottom: 5px;"><strong>Gender:</strong> ${window.i18n.t("gender_" + gender, gender.charAt(0).toUpperCase() + gender.slice(1))}</p>
+                <p style="color: var(--accent-glow); margin-top: 15px;">Your Day Master (Core Self): <strong>${dm.element} ${dm.polarity === '+' ? "+ (Yang)" : "- (Yin)"} (${dm.pinyin})</strong></p>
             </div>
         `;
 
         if (!category || category === 'all') {
             // 1. Personality
-            reading += `<h4>🎭 Personality Assessment</h4>`;
+            reading += `<h4>🎭 ${window.i18n.t("bazi_personality_assessment", "Personality Assessment")}</h4>`;
             if (dm.element === 'Wood' && dm.polarity === '+') {
-                reading += `<p>Like a strong, sturdy tree (Jia Wood), you are resilient, determined, and protective. You grow steadily upwards and provide shelter, but can be inflexible if pushed too hard. You are reliable and deeply rooted in your convictions.</p>`;
+                reading += `<p>${window.i18n.t("bazi_wood_plus", "Like a strong, sturdy tree (Jia Wood), you are resilient, determined, and protective. You grow steadily upwards and provide shelter, but can be inflexible if pushed too hard. You are reliable and deeply rooted in your convictions.")}</p>`;
             } else if (dm.element === 'Wood' && dm.polarity === '-') {
-                reading += `<p>Like flexible ivy (Yi Wood), you are highly adaptable, gentle, and brilliant at networking. You know how to maneuver around obstacles and thrive in complex environments by bending rather than breaking.</p>`;
+                reading += `<p>${window.i18n.t("bazi_wood_minus", "Like flexible ivy (Yi Wood), you are highly adaptable, gentle, and brilliant at networking. You know how to maneuver around obstacles and thrive in complex environments by bending rather than breaking.")}</p>`;
             } else if (dm.element === 'Fire' && dm.polarity === '+') {
-                reading += `<p>Like the radiant Sun (Bing Fire), you are exceptionally warm, generous, and highly visible. You naturally bring light and inspiration to others, living life with an infectious, grand passion.</p>`;
+                reading += `<p>${window.i18n.t("bazi_fire_plus", "Like the radiant Sun (Bing Fire), you are exceptionally warm, generous, and highly visible. You naturally bring light and inspiration to others, living life with an infectious, grand passion.")}</p>`;
             } else if (dm.element === 'Fire' && dm.polarity === '-') {
-                reading += `<p>Like a flickering candle (Ding Fire), you are inspiring, illuminating, and intensely focused. You possess profound inner passion, acting as a sensitive, intuitive guide in dark places.</p>`;
+                reading += `<p>${window.i18n.t("bazi_fire_minus", "Like a flickering candle (Ding Fire), you are inspiring, illuminating, and intensely focused. You possess profound inner passion, acting as a sensitive, intuitive guide in dark places.")}</p>`;
             } else if (dm.element === 'Earth' && dm.polarity === '+') {
-                reading += `<p>Like a massive mountain (Wu Earth), you are solid, reliable, and deeply grounded. People trust your immense stability. You represent an immovable foundation, though you resist sudden change.</p>`;
+                reading += `<p>${window.i18n.t("bazi_earth_plus", "Like a massive mountain (Wu Earth), you are solid, reliable, and deeply grounded. People trust your immense stability. You represent an immovable foundation, though you resist sudden change.")}</p>`;
             } else if (dm.element === 'Earth' && dm.polarity === '-') {
-                reading += `<p>Like rich, fertile soil (Ji Earth), you are highly nurturing, resourceful, and productive. You possess a unique ability to cultivate ideas and care for others, easily adapting to support collective growth.</p>`;
+                reading += `<p>${window.i18n.t("bazi_earth_minus", "Like rich, fertile soil (Ji Earth), you are highly nurturing, resourceful, and productive. You possess a unique ability to cultivate ideas and care for others, easily adapting to support collective growth.")}</p>`;
             } else if (dm.element === 'Metal' && dm.polarity === '+') {
-                reading += `<p>Like unrefined ore or a heavy axe (Geng Metal), you are tough, enduring, and brutally straightforward. You value justice, loyalty, and efficiency, executing tasks directly with uncompromising willpower.</p>`;
+                reading += `<p>${window.i18n.t("bazi_metal_plus", "Like unrefined ore or a heavy axe (Geng Metal), you are tough, enduring, and brutally straightforward. You value justice, loyalty, and efficiency, executing tasks directly with uncompromising willpower.")}</p>`;
             } else if (dm.element === 'Metal' && dm.polarity === '-') {
-                reading += `<p>Like fine jewelry (Xin Metal), you are refined, glamorous, and value aesthetics profoundly. You seek perfection and command attention through your unique shine, utilizing sharp intellect over brute force.</p>`;
+                reading += `<p>${window.i18n.t("bazi_metal_minus", "Like fine jewelry (Xin Metal), you are refined, glamorous, and value aesthetics profoundly. You seek perfection and command attention through your unique shine, utilizing sharp intellect over brute force.")}</p>`;
             } else if (dm.element === 'Water' && dm.polarity === '+') {
-                reading += `<p>Like a powerful ocean (Ren Water), you are intensely dynamic, unstoppable, and highly intelligent. Your mind is always in motion, capable of vast depths, navigating easily through any circumstance.</p>`;
+                reading += `<p>${window.i18n.t("bazi_water_plus", "Like a powerful ocean (Ren Water), you are intensely dynamic, unstoppable, and highly intelligent. Your mind is always in motion, capable of vast depths, navigating easily through any circumstance.")}</p>`;
             } else if (dm.element === 'Water' && dm.polarity === '-') {
-                reading += `<p>Like morning dew or mist (Gui Water), you are incredibly intuitive, gentle, and imaginative. You penetrate barriers through persistent, quiet action and possess profound emotional sensitivity.</p>`;
+                reading += `<p>${window.i18n.t("bazi_water_minus", "Like morning dew or mist (Gui Water), you are incredibly intuitive, gentle, and imaginative. You penetrate barriers through persistent, quiet action and possess profound emotional sensitivity.")}</p>`;
             }
 
             // Generate synthetic holistic readings based on element matching (simplified structural algorithm)
             const isFavorableWealth = (dm.element === "Wood" && bazi.month.stem.element === "Earth") || (dm.element === "Fire" && bazi.year.stem.element === "Metal") || (bazi.hour.stem.element === "Water");
 
             // 2. Wealth Level
-            reading += `<h4>💰 Wealth Level & Financial Destiny</h4>`;
+            reading += `<h4>💰 ${window.i18n.t("bazi_wealth_level", "Wealth Level & Financial Destiny")}</h4>`;
             if (isFavorableWealth) {
-                reading += `<p>Your chart indicates a <strong>strong affinity for wealth accumulation</strong>. Income flows naturally through business ventures, leadership roles, or real estate (represented by your strong Earth/Metal combinations). You possess entrepreneurial instincts; learning to leverage other people's resources will unlock your highest financial tier.</p>`;
+                reading += `<p>${window.i18n.t("bazi_wealth_strong", "Your chart indicates a <strong>strong affinity for wealth accumulation</strong>. Income flows naturally through business ventures, leadership roles, or real estate (represented by your strong Earth/Metal combinations). You possess entrepreneurial instincts; learning to leverage other people's resources will unlock your highest financial tier.")}</p>`;
             } else {
-                reading += `<p>Your chart indicates a <strong>steady, secure wealth profile</strong>. Rather than sudden windfalls, your financial growth relies on professional expertise, direct salary, and disciplined saving. Cultivating a specialized skill or acquiring professional licenses is your truest path to long-term financial freedom.</p>`;
+                reading += `<p>${window.i18n.t("bazi_wealth_steady", "Your chart indicates a <strong>steady, secure wealth profile</strong>. Rather than sudden windfalls, your financial growth relies on professional expertise, direct salary, and disciplined saving. Cultivating a specialized skill or acquiring professional licenses is your truest path to long-term financial freedom.")}</p>`;
             }
 
             // 3. Career Peak
-            reading += `<h4>📈 Career Peak Analysis</h4>`;
-            reading += `<p>Your career sector (located in your Month Pillar: ${bazi.month.stem.element} ${bazi.month.branch.animal}) suggests your primary professional drive peaks in your <strong>mid-30s to late 40s</strong>. The presence of the ${bazi.month.branch.animal} indicates you will excel in highly analytical, communicative, or leadership-driven environments. Do not rush to the top; your foundation built before age 30 will entirely support your massive elevation later.</p>`;
+            reading += `<h4>📈 ${window.i18n.t("bazi_career_peak", "Career Peak Analysis")}</h4>`;
+            let careerPeakBase = window.i18n.t("bazi_career_analysis", "Your career sector (located in your Month Pillar: {1} {2}) suggests your primary professional drive peaks in your <strong>mid-30s to late 40s</strong>. The presence of the {2} indicates you will excel in highly analytical, communicative, or leadership-driven environments. Do not rush to the top; your foundation built before age 30 will entirely support your massive elevation later.");
+            careerPeakBase = careerPeakBase.replace(/\{1\}/g, tElement(bazi.month.stem.element)).replace(/\{2\}/g, tAnimal(bazi.month.branch.animal));
+            reading += `<p>${careerPeakBase}</p>`;
 
             // 4. Marriage Destiny
-            reading += `<h4>💍 Marriage Destiny & Relationships</h4>`;
-            reading += `<p>The Spouse Palace (located in your Day Branch: ${bazi.day.branch.animal}) dictates your marriage destiny. Because your Day Branch is a <strong>${bazi.day.branch.animal}</strong>, you require a partner who is intellectually stimulating, loyal, and capable of giving you independent space. The chart favors waiting until after your first Saturn return (age 28-30) for a highly successful, lifelong marriage commitment.</p>`;
+            reading += `<h4>💍 ${window.i18n.t("bazi_marriage_destiny", "Marriage Destiny & Relationships")}</h4>`;
+            let marriageDestinyBase = window.i18n.t("bazi_marriage_analysis", "The Spouse Palace (located in your Day Branch: {1}) dictates your marriage destiny. Because your Day Branch is a <strong>{1}</strong>, you require a partner who is intellectually stimulating, loyal, and capable of giving you independent space. The chart favors waiting until after your first Saturn return (age 28-30) for a highly successful, lifelong marriage commitment.");
+            marriageDestinyBase = marriageDestinyBase.replace(/\{1\}/g, tAnimal(bazi.day.branch.animal));
+            reading += `<p>${marriageDestinyBase}</p>`;
 
             // 5. Major Life Cycles (The 4 Pillars Breakdown)
-            reading += `<h4>⏳ Major Life Cycles (Pillar Analysis)</h4>`;
+            reading += `<h4>⏳ ${window.i18n.t("bazi_life_cycles", "Major Life Cycles (Pillar Analysis)")}</h4>`;
             reading += `<ul style="color: var(--text-light); line-height: 1.6; margin-bottom: 20px;">`;
-            reading += `<li><strong>Ages 0-20 (Year Pillar - Ancestors):</strong> Governed by ${bazi.year.stem.element} ${bazi.year.branch.animal}. This signifies a foundational era influenced heavily by family karma, early education, and your ancestral roots.</li>`;
-            reading += `<li><strong>Ages 21-40 (Month Pillar - Career):</strong> Governed by ${bazi.month.stem.element} ${bazi.month.branch.animal}. This is your prime building phase, where your societal role, primary career path, and interactions with superiors shape your life.</li>`;
-            reading += `<li><strong>Ages 41-60 (Day Pillar - Self/Spouse):</strong> Governed by ${bazi.day.stem.element} ${bazi.day.branch.animal}. Your era of self-actualization. This period focuses intensely on your core identity, marriage, and realizing your personal potential.</li>`;
-            reading += `<li><strong>Ages 61+ (Hour Pillar - Legacy):</strong> Governed by ${bazi.hour.stem.element} ${bazi.hour.branch.animal}. Represents your later years, relationship with children/subordinates, and the ultimate legacy, wealth, or wisdom you leave behind.</li>`;
+
+            let p1 = window.i18n.t("bazi_cycle_1", "<strong>Ages 0-20 (Year Pillar - Ancestors):</strong> Governed by {1} {2}. This signifies a foundational era influenced heavily by family karma, early education, and your ancestral roots.");
+            p1 = p1.replace(/\{1\}/g, tElement(bazi.year.stem.element)).replace(/\{2\}/g, tAnimal(bazi.year.branch.animal));
+            reading += `<li>${p1}</li>`;
+
+            let p2 = window.i18n.t("bazi_cycle_2", "<strong>Ages 21-40 (Month Pillar - Career):</strong> Governed by {1} {2}. This is your prime building phase, where your societal role, primary career path, and interactions with superiors shape your life.");
+            p2 = p2.replace(/\{1\}/g, tElement(bazi.month.stem.element)).replace(/\{2\}/g, tAnimal(bazi.month.branch.animal));
+            reading += `<li>${p2}</li>`;
+
+            let p3 = window.i18n.t("bazi_cycle_3", "<strong>Ages 41-60 (Day Pillar - Self/Spouse):</strong> Governed by {1} {2}. Your era of self-actualization. This period focuses intensely on your core identity, marriage, and realizing your personal potential.");
+            p3 = p3.replace(/\{1\}/g, tElement(bazi.day.stem.element)).replace(/\{2\}/g, tAnimal(bazi.day.branch.animal));
+            reading += `<li>${p3}</li>`;
+
+            let p4 = window.i18n.t("bazi_cycle_4", "<strong>Ages 61+ (Hour Pillar - Legacy):</strong> Governed by {1} {2}. Represents your later years, relationship with children/subordinates, and the ultimate legacy, wealth, or wisdom you leave behind.");
+            p4 = p4.replace(/\{1\}/g, tElement(bazi.hour.stem.element)).replace(/\{2\}/g, tAnimal(bazi.hour.branch.animal));
+            reading += `<li>${p4}</li>`;
+
             reading += `</ul>`;
 
             // 6. Upcoming Luck Trends
-            reading += `<h4>✨ Upcoming Luck Trends (Direct Prediction)</h4>`;
+            reading += `<h4>✨ ${window.i18n.t("bazi_upcoming_luck", "Upcoming Luck Trends (Direct Prediction)")}</h4>`;
             const derivedYear = birthDate.getFullYear();
             const nextYearElement = (derivedYear % 2 === 0) ? "Wood" : "Water"; // Fake deterministic logic for app feel
-            reading += `<p>In the immediate upcoming 12-24 months, the dominant cosmic energy shifting into your chart is heavily influenced by <strong>${nextYearElement}</strong>. Because of this, you will experience a dramatic increase in your social networking and educational opportunities. <strong>Direct Prediction:</strong> Prepare for a significant shift in your physical location or a major pivot in your career duties within the next 18 months. Save cash liquidly and embrace the change—it represents a massive upward leap in your life cycle.</p>`;
+            let luckPrediction = window.i18n.t("bazi_luck_prediction", "In the immediate upcoming 12-24 months, the dominant cosmic energy shifting into your chart is heavily influenced by <strong>{1}</strong>. Because of this, you will experience a dramatic increase in your social networking and educational opportunities. <strong>Direct Prediction:</strong> Prepare for a significant shift in your physical location or a major pivot in your career duties within the next 18 months. Save cash liquidly and embrace the change—it represents a massive upward leap in your life cycle.");
+            luckPrediction = luckPrediction.replace(/\{1\}/g, tElement(nextYearElement));
+            reading += `<p>${luckPrediction}</p>`;
         } else {
             // 7. Specific Focus Area / Question
-            reading += `<h4>🎯 Specific Focus Insight</h4>`;
+            reading += `<h4>🎯 ${window.i18n.t("bazi_specific_focus", "Specific Focus Insight")}</h4>`;
 
             let timeframeText = '';
             if (periodStart && periodEnd) {
                 const startStr = new Date(periodStart).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
                 const endStr = new Date(periodEnd).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-                timeframeText = ` during the specified period of <strong>${startStr} to ${endStr}</strong>`;
+                timeframeText = window.i18n.t("bazi_timeframe", " during the specified period of <strong>{1} to {2}</strong>").replace(/\{1\}/g, startStr).replace(/\{2\}/g, endStr);
             }
 
             if (category === 'other' && question) {
-                reading += `<p style="color: var(--accent-glow); margin-bottom: 10px;"><em>Your Question: "${question}"</em></p>`;
-                reading += `<p>Based on the elemental balance of your BaZi chart, addressing this specific inquiry requires leveraging your strong ${dm.element} nature${timeframeText}. Since this is a highly specific query, the chart suggests patience and strategic alignment. The outcome heavily depends on taking calculated, decisive action without acting purely on emotion.</p>`;
+                reading += `<p style="color: var(--accent-glow); margin-bottom: 10px;"><em>${window.i18n.t("bazi_your_question", "Your Question:")} "${question}"</em></p>`;
+                let customAnswer = window.i18n.t("bazi_custom_answer", "Based on the elemental balance of your BaZi chart, addressing this specific inquiry requires leveraging your strong {1} nature{2}. Since this is a highly specific query, the chart suggests patience and strategic alignment. The outcome heavily depends on taking calculated, decisive action without acting purely on emotion.");
+                customAnswer = customAnswer.replace(/\{1\}/g, tElement(dm.element)).replace(/\{2\}/g, timeframeText);
+                reading += `<p>${customAnswer}</p>`;
             } else {
-                const catLabels = { career: 'Career', money: 'Wealth', love: 'Relationships', health: 'Health', business: 'Business', family: 'Family', travel: 'Travel', legal: 'Legal Matters', spiritual: 'Spiritual Growth' };
-                reading += `<p>Focusing purely on <strong>${catLabels[category]}</strong>${timeframeText}, the BaZi energy indicates a significant turning point. You must utilize the hidden strengths of your ${dm.polarity === '+' ? 'Yang' : 'Yin'} ${dm.element} profile. If you feel stagnated, it is because your current environment is not feeding your core element. Realigning your daily habits and environment to match your Day Master will unlock the exact breakthrough you seek in this area.</p>`;
+                const catLabels = { career: window.i18n.t("cat_career", 'Career'), money: window.i18n.t("cat_money", 'Wealth'), love: window.i18n.t("cat_love", 'Relationships'), health: window.i18n.t("cat_health", 'Health'), business: window.i18n.t("cat_business", 'Business'), family: window.i18n.t("cat_family", 'Family'), travel: window.i18n.t("cat_travel", 'Travel'), legal: window.i18n.t("cat_legal", 'Legal Matters'), spiritual: window.i18n.t("cat_spiritual", 'Spiritual Growth') };
+                let catAnswer = window.i18n.t("bazi_cat_answer", "Focusing purely on <strong>{1}</strong>{2}, the BaZi energy indicates a significant turning point. You must utilize the hidden strengths of your {3} {4} profile. If you feel stagnated, it is because your current environment is not feeding your core element. Realigning your daily habits and environment to match your Day Master will unlock the exact breakthrough you seek in this area.");
+                const polarityStr = dm.polarity === '+' ? window.i18n.t("bazi_yang_sym", '+ (Yang)') : window.i18n.t("bazi_yin_sym", '- (Yin)');
+                catAnswer = catAnswer.replace(/\{1\}/g, catLabels[category]).replace(/\{2\}/g, timeframeText).replace(/\{3\}/g, polarityStr).replace(/\{4\}/g, tElement(dm.element));
+                reading += `<p>${catAnswer}</p>`;
             }
         }
 
